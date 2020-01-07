@@ -1,0 +1,34 @@
+syntax = "proto3";
+package senml_proto;
+
+message Record {
+  // base meta fields
+  string baseName = 1;
+  double baseTime = 2;
+  string baseUnit = 3;
+  int32 baseVersion = 4;
+  double baseValue = 5;
+  double baseSum = 6;
+
+  // meta fields
+  string name = 7;
+  string unit = 8;
+  double time = 9;
+  double updateTime = 16; // rarely used
+
+  // value fields
+  double value = 10;
+  string stringValue = 11;
+  string dataValue = 12;
+  bool boolValue = 13;
+  double sum = 14;
+
+  enum ValueType {
+    FLOAT = 0;
+    STRING = 1;
+    BINARY = 2;
+    BOOL = 3;
+    SUM = 4;
+  }
+  ValueType type = 15; // value type indicator
+}
