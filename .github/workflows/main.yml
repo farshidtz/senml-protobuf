@@ -41,11 +41,11 @@ jobs:
       
     - name: Commit files
       run: |
+        git add ${LANG}
         if ! git diff --quiet --exit-code ${LANG}; # something is changed
         then
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add ${LANG}
           git commit -m "Added generated sources [automated]"
         fi
     - name: Push changes
