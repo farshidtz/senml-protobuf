@@ -17,13 +17,22 @@ jobs:
       run: mkdir -p python && protoc --python_out=python senml.proto
     - name: Generate JavaScript Source
       run: mkdir -p js && protoc --js_out=js senml.proto
+    # Golang
+    - name: Install Go
+      uses: actions/setup-go@v1
+    - name: Install protoc Go Plugin
+      run: go get -u github.com/golang/protobuf/protoc-gen-go
+    - name: Generate Go Source
+      run: mkdir -p go && protoc --go_out=go senml.proto
+    
       
-    - name: Commit files
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git commit -m "Updated generated sources" -A
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.REPO_TOKEN }}
+#     - name: Commit files
+#       run: |
+#         git config --local user.email "action@github.com"
+#         git config --local user.name "GitHub Action"
+#         git add cpp python js
+#         git commit -m "Updated generated sources"
+#     - name: Push changes
+#       uses: ad-m/github-push-action@master
+#       with:
+#         github_token: ${{ secrets.REPO_TOKEN }}
