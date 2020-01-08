@@ -10,6 +10,8 @@ This repo contains the Protobuf description of [RFC8428 - Sensor Measurement Lis
 * PHP
 * Go (using [protoc-gen-go](https://github.com/golang/protobuf) plugin)
 
+The source file generation is automated using a Github Action workflow, available [here](https://github.com/farshidtz/senml.proto/blob/master/.github/workflows/main.yml).
+
 ## Go
 [![GoDoc](https://godoc.org/github.com/farshidtz/senml.proto/go?status.svg)](https://godoc.org/github.com/farshidtz/senml.proto/go)
 ### Import
