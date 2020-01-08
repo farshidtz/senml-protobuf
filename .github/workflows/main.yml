@@ -24,7 +24,7 @@ jobs:
     - name: Generate C# Source
       run: protoc --csharp_out=csharp senml.proto
     - name: Generate Ruby Source
-      run: mprotoc --ruby_out=ruby senml.proto
+      run: protoc --ruby_out=ruby senml.proto
     - name: Generate PHP Source
       run: protoc --php_out=php senml.proto
     # Golang
