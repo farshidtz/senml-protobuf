@@ -42,7 +42,8 @@ jobs:
     - name: Commit files
       run: |
         git add ${LANG}
-        if ! git diff --quiet --exit-code ${LANG}; # something is changed
+        git status ${LANG}
+        if [ -n "$(git status --porcelain $LANG)" ]; # something is changed
         then
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
