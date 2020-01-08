@@ -2,7 +2,7 @@ name: CI
 
 on: [push]
 env: 
-  LANGS: (cpp python java js csharp ruby php go)
+  LANGS: cpp python java js csharp ruby php go
   PROTO_FILE: senml.proto
 
 jobs:
@@ -23,7 +23,8 @@ jobs:
     
     - name: Generate Sources
       run: |
-        for LANG in "${LANGS[@]}"
+        LANGS_ARR=($LANGS)
+        for LANG in "${LANGS_ARR[@]}"
         do 
             echo "Generating: "$LANG
             mkdir -p ${LANG}
