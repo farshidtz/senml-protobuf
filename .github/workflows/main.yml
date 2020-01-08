@@ -39,7 +39,8 @@ jobs:
       
     - name: Commit files
       run: |
-        if git diff --quiet --exit-code; then
+        if ! git diff --quiet --exit-code ${LANG}; # something is changed
+        then
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add ${LANG}
