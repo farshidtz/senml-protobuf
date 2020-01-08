@@ -38,12 +38,13 @@ jobs:
     
       
     - name: Commit files
-      if: ${{git diff --quiet --exit-code}}
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add ${LANG}
-        git commit -m "Added generated sources [automated]"
+        if git diff --quiet --exit-code; then
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add ${LANG}
+          git commit -m "Added generated sources [automated]"
+        fi
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
