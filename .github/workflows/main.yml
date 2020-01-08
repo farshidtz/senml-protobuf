@@ -2,7 +2,7 @@ name: CI
 
 on: [push]
 env: 
-  LANG: cpp python js csharp ruby php go
+  LANG: cpp python java js csharp ruby php go
 
 jobs:
   build:
@@ -20,6 +20,8 @@ jobs:
       run: protoc --cpp_out=cpp senml.proto
     - name: Generate Python Source
       run: protoc --python_out=python senml.proto
+    - name: Generate Java Source
+      run: protoc --java_out=java senml.proto
     - name: Generate JavaScript Source
       run: protoc --js_out=js senml.proto
     - name: Generate C# Source
