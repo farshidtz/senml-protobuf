@@ -2,7 +2,8 @@ name: CI
 
 on: [push]
 env: 
-  LANGS: cpp python java js csharp ruby php go
+  LANGS: (cpp python java js csharp ruby php go)
+  PROTO_FILE: senml.proto
 
 jobs:
   build:
@@ -26,12 +27,9 @@ jobs:
         do 
             echo "Generating: "$LANG
             mkdir -p ${LANG}
-            protoc --${LANG}_out=${LANG} addressbook.proto
+            protoc --${LANG}_out=${LANG} ${PROTO_FILE}
         done
 
-
-    - name: Generate Go Source
-      run: mkdir -p go && protoc --go_out=go senml.proto
     
       
     - name: Commit files
