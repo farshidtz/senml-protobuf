@@ -16,7 +16,7 @@ The source file generation is automated using a Github Action workflow, availabl
 [![GoDoc](https://godoc.org/github.com/farshidtz/senml.proto/go?status.svg)](https://godoc.org/github.com/farshidtz/senml.proto/go)
 ### Import
 ```
-import senmlproto "github.com/farshidtz/senml.proto/go"
+import senmlproto "github.com/farshidtz/senml-protobuf/go"
 ```
 
 ### Compile

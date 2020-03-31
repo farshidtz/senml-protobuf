@@ -1,4 +1,4 @@
-module github.com/farshidtz/senml.proto/go
+module github.com/farshidtz/senml-protobuf/go
 
 go 1.13
 
