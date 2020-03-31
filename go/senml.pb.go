@@ -221,7 +221,9 @@ func init() {
 	proto.RegisterType((*Record)(nil), "senml_proto.Record")
 }
 
-func init() { proto.RegisterFile("senml.proto", fileDescriptor_d2d574953ec1dc46) }
+func init() {
+	proto.RegisterFile("senml.proto", fileDescriptor_d2d574953ec1dc46)
+}
 
 var fileDescriptor_d2d574953ec1dc46 = []byte{
 	// 335 bytes of a gzipped FileDescriptorProto
