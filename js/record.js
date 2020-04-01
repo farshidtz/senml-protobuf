@@ -8,8 +8,11 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-goog.provide('proto.senml_proto.Record');
-goog.provide('proto.senml_proto.Record.ValueType');
+goog.provide('proto.senml_protobuf.Record');
+goog.provide('proto.senml_protobuf.Record.BasesumoptionalCase');
+goog.provide('proto.senml_protobuf.Record.BasevalueoptionalCase');
+goog.provide('proto.senml_protobuf.Record.SumoptionalCase');
+goog.provide('proto.senml_protobuf.Record.ValueoneofCase');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -25,17 +28,90 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.senml_proto.Record = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+proto.senml_protobuf.Record = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.senml_protobuf.Record.oneofGroups_);
 };
-goog.inherits(proto.senml_proto.Record, jspb.Message);
+goog.inherits(proto.senml_protobuf.Record, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.senml_proto.Record.displayName = 'proto.senml_proto.Record';
+  proto.senml_protobuf.Record.displayName = 'proto.senml_protobuf.Record';
 }
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.senml_protobuf.Record.oneofGroups_ = [[5],[6],[11,12,13,14],[15]];
+
+/**
+ * @enum {number}
+ */
+proto.senml_protobuf.Record.BasevalueoptionalCase = {
+  BASEVALUEOPTIONAL_NOT_SET: 0,
+  BASEVALUE: 5
+};
+
+/**
+ * @return {proto.senml_protobuf.Record.BasevalueoptionalCase}
+ */
+proto.senml_protobuf.Record.prototype.getBasevalueoptionalCase = function() {
+  return /** @type {proto.senml_protobuf.Record.BasevalueoptionalCase} */(jspb.Message.computeOneofCase(this, proto.senml_protobuf.Record.oneofGroups_[0]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.senml_protobuf.Record.BasesumoptionalCase = {
+  BASESUMOPTIONAL_NOT_SET: 0,
+  BASESUM: 6
+};
+
+/**
+ * @return {proto.senml_protobuf.Record.BasesumoptionalCase}
+ */
+proto.senml_protobuf.Record.prototype.getBasesumoptionalCase = function() {
+  return /** @type {proto.senml_protobuf.Record.BasesumoptionalCase} */(jspb.Message.computeOneofCase(this, proto.senml_protobuf.Record.oneofGroups_[1]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.senml_protobuf.Record.ValueoneofCase = {
+  VALUEONEOF_NOT_SET: 0,
+  VALUE: 11,
+  STRINGVALUE: 12,
+  DATAVALUE: 13,
+  BOOLVALUE: 14
+};
+
+/**
+ * @return {proto.senml_protobuf.Record.ValueoneofCase}
+ */
+proto.senml_protobuf.Record.prototype.getValueoneofCase = function() {
+  return /** @type {proto.senml_protobuf.Record.ValueoneofCase} */(jspb.Message.computeOneofCase(this, proto.senml_protobuf.Record.oneofGroups_[2]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.senml_protobuf.Record.SumoptionalCase = {
+  SUMOPTIONAL_NOT_SET: 0,
+  SUM: 15
+};
+
+/**
+ * @return {proto.senml_protobuf.Record.SumoptionalCase}
+ */
+proto.senml_protobuf.Record.prototype.getSumoptionalCase = function() {
+  return /** @type {proto.senml_protobuf.Record.SumoptionalCase} */(jspb.Message.computeOneofCase(this, proto.senml_protobuf.Record.oneofGroups_[3]));
+};
 
 
 
@@ -52,8 +128,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.senml_proto.Record.prototype.toObject = function(opt_includeInstance) {
-  return proto.senml_proto.Record.toObject(opt_includeInstance, this);
+proto.senml_protobuf.Record.prototype.toObject = function(opt_includeInstance) {
+  return proto.senml_protobuf.Record.toObject(opt_includeInstance, this);
 };
 
 
@@ -62,11 +138,11 @@ proto.senml_proto.Record.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.senml_proto.Record} msg The msg instance to transform.
+ * @param {!proto.senml_protobuf.Record} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.senml_proto.Record.toObject = function(includeInstance, msg) {
+proto.senml_protobuf.Record.toObject = function(includeInstance, msg) {
   var f, obj = {
     basename: jspb.Message.getFieldWithDefault(msg, 1, ""),
     basetime: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
@@ -77,13 +153,12 @@ proto.senml_proto.Record.toObject = function(includeInstance, msg) {
     name: jspb.Message.getFieldWithDefault(msg, 7, ""),
     unit: jspb.Message.getFieldWithDefault(msg, 8, ""),
     time: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0),
-    updatetime: jspb.Message.getFloatingPointFieldWithDefault(msg, 16, 0.0),
-    value: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0.0),
-    stringvalue: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    datavalue: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    boolvalue: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
-    sum: jspb.Message.getFloatingPointFieldWithDefault(msg, 14, 0.0),
-    type: jspb.Message.getFieldWithDefault(msg, 15, 0)
+    updatetime: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0.0),
+    value: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0),
+    stringvalue: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    datavalue: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    boolvalue: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
+    sum: jspb.Message.getFloatingPointFieldWithDefault(msg, 15, 0.0)
   };
 
   if (includeInstance) {
@@ -97,23 +172,23 @@ proto.senml_proto.Record.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.senml_proto.Record}
+ * @return {!proto.senml_protobuf.Record}
  */
-proto.senml_proto.Record.deserializeBinary = function(bytes) {
+proto.senml_protobuf.Record.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.senml_proto.Record;
-  return proto.senml_proto.Record.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.senml_protobuf.Record;
+  return proto.senml_protobuf.Record.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.senml_proto.Record} msg The message object to deserialize into.
+ * @param {!proto.senml_protobuf.Record} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.senml_proto.Record}
+ * @return {!proto.senml_protobuf.Record}
  */
-proto.senml_proto.Record.deserializeBinaryFromReader = function(msg, reader) {
+proto.senml_protobuf.Record.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -156,33 +231,29 @@ proto.senml_proto.Record.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readDouble());
       msg.setTime(value);
       break;
-    case 16:
+    case 10:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setUpdatetime(value);
       break;
-    case 10:
+    case 11:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setValue(value);
       break;
-    case 11:
+    case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setStringvalue(value);
       break;
-    case 12:
+    case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setDatavalue(value);
       break;
-    case 13:
+    case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setBoolvalue(value);
       break;
-    case 14:
+    case 15:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setSum(value);
-      break;
-    case 15:
-      var value = /** @type {!proto.senml_proto.Record.ValueType} */ (reader.readEnum());
-      msg.setType(value);
       break;
     default:
       reader.skipField();
@@ -197,9 +268,9 @@ proto.senml_proto.Record.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.senml_proto.Record.prototype.serializeBinary = function() {
+proto.senml_protobuf.Record.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.senml_proto.Record.serializeBinaryToWriter(this, writer);
+  proto.senml_protobuf.Record.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -207,11 +278,11 @@ proto.senml_proto.Record.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.senml_proto.Record} message
+ * @param {!proto.senml_protobuf.Record} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.senml_proto.Record.serializeBinaryToWriter = function(message, writer) {
+proto.senml_protobuf.Record.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getBasename();
   if (f.length > 0) {
@@ -241,15 +312,15 @@ proto.senml_proto.Record.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getBasevalue();
-  if (f !== 0.0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
     writer.writeDouble(
       5,
       f
     );
   }
-  f = message.getBasesum();
-  if (f !== 0.0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
     writer.writeDouble(
       6,
       f
@@ -279,48 +350,41 @@ proto.senml_proto.Record.serializeBinaryToWriter = function(message, writer) {
   f = message.getUpdatetime();
   if (f !== 0.0) {
     writer.writeDouble(
-      16,
-      f
-    );
-  }
-  f = message.getValue();
-  if (f !== 0.0) {
-    writer.writeDouble(
       10,
       f
     );
   }
-  f = message.getStringvalue();
-  if (f.length > 0) {
-    writer.writeString(
+  f = /** @type {number} */ (jspb.Message.getField(message, 11));
+  if (f != null) {
+    writer.writeDouble(
       11,
       f
     );
   }
-  f = message.getDatavalue();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 12));
+  if (f != null) {
     writer.writeString(
       12,
       f
     );
   }
-  f = message.getBoolvalue();
-  if (f) {
-    writer.writeBool(
+  f = /** @type {string} */ (jspb.Message.getField(message, 13));
+  if (f != null) {
+    writer.writeString(
       13,
       f
     );
   }
-  f = message.getSum();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 14));
+  if (f != null) {
+    writer.writeBool(
       14,
       f
     );
   }
-  f = message.getType();
-  if (f !== 0.0) {
-    writer.writeEnum(
+  f = /** @type {number} */ (jspb.Message.getField(message, 15));
+  if (f != null) {
+    writer.writeDouble(
       15,
       f
     );
@@ -329,30 +393,19 @@ proto.senml_proto.Record.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * @enum {number}
- */
-proto.senml_proto.Record.ValueType = {
-  FLOAT: 0,
-  STRING: 1,
-  BINARY: 2,
-  BOOL: 3,
-  SUM: 4
-};
-
-/**
  * optional string baseName = 1;
  * @return {string}
  */
-proto.senml_proto.Record.prototype.getBasename = function() {
+proto.senml_protobuf.Record.prototype.getBasename = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.senml_proto.Record} returns this
+ * @return {!proto.senml_protobuf.Record} returns this
  */
-proto.senml_proto.Record.prototype.setBasename = function(value) {
+proto.senml_protobuf.Record.prototype.setBasename = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -361,16 +414,16 @@ proto.senml_proto.Record.prototype.setBasename = function(value) {
  * optional double baseTime = 2;
  * @return {number}
  */
-proto.senml_proto.Record.prototype.getBasetime = function() {
+proto.senml_protobuf.Record.prototype.getBasetime = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.senml_proto.Record} returns this
+ * @return {!proto.senml_protobuf.Record} returns this
  */
-proto.senml_proto.Record.prototype.setBasetime = function(value) {
+proto.senml_protobuf.Record.prototype.setBasetime = function(value) {
   return jspb.Message.setProto3FloatField(this, 2, value);
 };
 
@@ -379,16 +432,16 @@ proto.senml_proto.Record.prototype.setBasetime = function(value) {
  * optional string baseUnit = 3;
  * @return {string}
  */
-proto.senml_proto.Record.prototype.getBaseunit = function() {
+proto.senml_protobuf.Record.prototype.getBaseunit = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.senml_proto.Record} returns this
+ * @return {!proto.senml_protobuf.Record} returns this
  */
-proto.senml_proto.Record.prototype.setBaseunit = function(value) {
+proto.senml_protobuf.Record.prototype.setBaseunit = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -397,16 +450,16 @@ proto.senml_proto.Record.prototype.setBaseunit = function(value) {
  * optional int32 baseVersion = 4;
  * @return {number}
  */
-proto.senml_proto.Record.prototype.getBaseversion = function() {
+proto.senml_protobuf.Record.prototype.getBaseversion = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.senml_proto.Record} returns this
+ * @return {!proto.senml_protobuf.Record} returns this
  */
-proto.senml_proto.Record.prototype.setBaseversion = function(value) {
+proto.senml_protobuf.Record.prototype.setBaseversion = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
@@ -415,17 +468,35 @@ proto.senml_proto.Record.prototype.setBaseversion = function(value) {
  * optional double baseValue = 5;
  * @return {number}
  */
-proto.senml_proto.Record.prototype.getBasevalue = function() {
+proto.senml_protobuf.Record.prototype.getBasevalue = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.senml_proto.Record} returns this
+ * @return {!proto.senml_protobuf.Record} returns this
  */
-proto.senml_proto.Record.prototype.setBasevalue = function(value) {
-  return jspb.Message.setProto3FloatField(this, 5, value);
+proto.senml_protobuf.Record.prototype.setBasevalue = function(value) {
+  return jspb.Message.setOneofField(this, 5, proto.senml_protobuf.Record.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.senml_protobuf.Record} returns this
+ */
+proto.senml_protobuf.Record.prototype.clearBasevalue = function() {
+  return jspb.Message.setOneofField(this, 5, proto.senml_protobuf.Record.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.senml_protobuf.Record.prototype.hasBasevalue = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -433,17 +504,35 @@ proto.senml_proto.Record.prototype.setBasevalue = function(value) {
  * optional double baseSum = 6;
  * @return {number}
  */
-proto.senml_proto.Record.prototype.getBasesum = function() {
+proto.senml_protobuf.Record.prototype.getBasesum = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.senml_proto.Record} returns this
+ * @return {!proto.senml_protobuf.Record} returns this
  */
-proto.senml_proto.Record.prototype.setBasesum = function(value) {
-  return jspb.Message.setProto3FloatField(this, 6, value);
+proto.senml_protobuf.Record.prototype.setBasesum = function(value) {
+  return jspb.Message.setOneofField(this, 6, proto.senml_protobuf.Record.oneofGroups_[1], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.senml_protobuf.Record} returns this
+ */
+proto.senml_protobuf.Record.prototype.clearBasesum = function() {
+  return jspb.Message.setOneofField(this, 6, proto.senml_protobuf.Record.oneofGroups_[1], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.senml_protobuf.Record.prototype.hasBasesum = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -451,16 +540,16 @@ proto.senml_proto.Record.prototype.setBasesum = function(value) {
  * optional string name = 7;
  * @return {string}
  */
-proto.senml_proto.Record.prototype.getName = function() {
+proto.senml_protobuf.Record.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.senml_proto.Record} returns this
+ * @return {!proto.senml_protobuf.Record} returns this
  */
-proto.senml_proto.Record.prototype.setName = function(value) {
+proto.senml_protobuf.Record.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 7, value);
 };
 
@@ -469,16 +558,16 @@ proto.senml_proto.Record.prototype.setName = function(value) {
  * optional string unit = 8;
  * @return {string}
  */
-proto.senml_proto.Record.prototype.getUnit = function() {
+proto.senml_protobuf.Record.prototype.getUnit = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.senml_proto.Record} returns this
+ * @return {!proto.senml_protobuf.Record} returns this
  */
-proto.senml_proto.Record.prototype.setUnit = function(value) {
+proto.senml_protobuf.Record.prototype.setUnit = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
 };
 
@@ -487,143 +576,215 @@ proto.senml_proto.Record.prototype.setUnit = function(value) {
  * optional double time = 9;
  * @return {number}
  */
-proto.senml_proto.Record.prototype.getTime = function() {
+proto.senml_protobuf.Record.prototype.getTime = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 9, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.senml_proto.Record} returns this
+ * @return {!proto.senml_protobuf.Record} returns this
  */
-proto.senml_proto.Record.prototype.setTime = function(value) {
+proto.senml_protobuf.Record.prototype.setTime = function(value) {
   return jspb.Message.setProto3FloatField(this, 9, value);
 };
 
 
 /**
- * optional double updateTime = 16;
+ * optional double updateTime = 10;
  * @return {number}
  */
-proto.senml_proto.Record.prototype.getUpdatetime = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 16, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.senml_proto.Record} returns this
- */
-proto.senml_proto.Record.prototype.setUpdatetime = function(value) {
-  return jspb.Message.setProto3FloatField(this, 16, value);
-};
-
-
-/**
- * optional double value = 10;
- * @return {number}
- */
-proto.senml_proto.Record.prototype.getValue = function() {
+proto.senml_protobuf.Record.prototype.getUpdatetime = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 10, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.senml_proto.Record} returns this
+ * @return {!proto.senml_protobuf.Record} returns this
  */
-proto.senml_proto.Record.prototype.setValue = function(value) {
+proto.senml_protobuf.Record.prototype.setUpdatetime = function(value) {
   return jspb.Message.setProto3FloatField(this, 10, value);
 };
 
 
 /**
- * optional string stringValue = 11;
- * @return {string}
+ * optional double value = 11;
+ * @return {number}
  */
-proto.senml_proto.Record.prototype.getStringvalue = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+proto.senml_protobuf.Record.prototype.getValue = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 11, 0.0));
 };
 
 
 /**
- * @param {string} value
- * @return {!proto.senml_proto.Record} returns this
+ * @param {number} value
+ * @return {!proto.senml_protobuf.Record} returns this
  */
-proto.senml_proto.Record.prototype.setStringvalue = function(value) {
-  return jspb.Message.setProto3StringField(this, 11, value);
+proto.senml_protobuf.Record.prototype.setValue = function(value) {
+  return jspb.Message.setOneofField(this, 11, proto.senml_protobuf.Record.oneofGroups_[2], value);
 };
 
 
 /**
- * optional string dataValue = 12;
+ * Clears the field making it undefined.
+ * @return {!proto.senml_protobuf.Record} returns this
+ */
+proto.senml_protobuf.Record.prototype.clearValue = function() {
+  return jspb.Message.setOneofField(this, 11, proto.senml_protobuf.Record.oneofGroups_[2], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.senml_protobuf.Record.prototype.hasValue = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional string stringValue = 12;
  * @return {string}
  */
-proto.senml_proto.Record.prototype.getDatavalue = function() {
+proto.senml_protobuf.Record.prototype.getStringvalue = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.senml_proto.Record} returns this
+ * @return {!proto.senml_protobuf.Record} returns this
  */
-proto.senml_proto.Record.prototype.setDatavalue = function(value) {
-  return jspb.Message.setProto3StringField(this, 12, value);
+proto.senml_protobuf.Record.prototype.setStringvalue = function(value) {
+  return jspb.Message.setOneofField(this, 12, proto.senml_protobuf.Record.oneofGroups_[2], value);
 };
 
 
 /**
- * optional bool boolValue = 13;
+ * Clears the field making it undefined.
+ * @return {!proto.senml_protobuf.Record} returns this
+ */
+proto.senml_protobuf.Record.prototype.clearStringvalue = function() {
+  return jspb.Message.setOneofField(this, 12, proto.senml_protobuf.Record.oneofGroups_[2], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
  * @return {boolean}
  */
-proto.senml_proto.Record.prototype.getBoolvalue = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
+proto.senml_protobuf.Record.prototype.hasStringvalue = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional string dataValue = 13;
+ * @return {string}
+ */
+proto.senml_protobuf.Record.prototype.getDatavalue = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.senml_protobuf.Record} returns this
+ */
+proto.senml_protobuf.Record.prototype.setDatavalue = function(value) {
+  return jspb.Message.setOneofField(this, 13, proto.senml_protobuf.Record.oneofGroups_[2], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.senml_protobuf.Record} returns this
+ */
+proto.senml_protobuf.Record.prototype.clearDatavalue = function() {
+  return jspb.Message.setOneofField(this, 13, proto.senml_protobuf.Record.oneofGroups_[2], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.senml_protobuf.Record.prototype.hasDatavalue = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional bool boolValue = 14;
+ * @return {boolean}
+ */
+proto.senml_protobuf.Record.prototype.getBoolvalue = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.senml_proto.Record} returns this
+ * @return {!proto.senml_protobuf.Record} returns this
  */
-proto.senml_proto.Record.prototype.setBoolvalue = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 13, value);
+proto.senml_protobuf.Record.prototype.setBoolvalue = function(value) {
+  return jspb.Message.setOneofField(this, 14, proto.senml_protobuf.Record.oneofGroups_[2], value);
 };
 
 
 /**
- * optional double sum = 14;
+ * Clears the field making it undefined.
+ * @return {!proto.senml_protobuf.Record} returns this
+ */
+proto.senml_protobuf.Record.prototype.clearBoolvalue = function() {
+  return jspb.Message.setOneofField(this, 14, proto.senml_protobuf.Record.oneofGroups_[2], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.senml_protobuf.Record.prototype.hasBoolvalue = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional double sum = 15;
  * @return {number}
  */
-proto.senml_proto.Record.prototype.getSum = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 14, 0.0));
+proto.senml_protobuf.Record.prototype.getSum = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 15, 0.0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.senml_proto.Record} returns this
+ * @return {!proto.senml_protobuf.Record} returns this
  */
-proto.senml_proto.Record.prototype.setSum = function(value) {
-  return jspb.Message.setProto3FloatField(this, 14, value);
+proto.senml_protobuf.Record.prototype.setSum = function(value) {
+  return jspb.Message.setOneofField(this, 15, proto.senml_protobuf.Record.oneofGroups_[3], value);
 };
 
 
 /**
- * optional ValueType type = 15;
- * @return {!proto.senml_proto.Record.ValueType}
+ * Clears the field making it undefined.
+ * @return {!proto.senml_protobuf.Record} returns this
  */
-proto.senml_proto.Record.prototype.getType = function() {
-  return /** @type {!proto.senml_proto.Record.ValueType} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+proto.senml_protobuf.Record.prototype.clearSum = function() {
+  return jspb.Message.setOneofField(this, 15, proto.senml_protobuf.Record.oneofGroups_[3], undefined);
 };
 
 
 /**
- * @param {!proto.senml_proto.Record.ValueType} value
- * @return {!proto.senml_proto.Record} returns this
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.senml_proto.Record.prototype.setType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 15, value);
+proto.senml_protobuf.Record.prototype.hasSum = function() {
+  return jspb.Message.getField(this, 15) != null;
 };
 
 

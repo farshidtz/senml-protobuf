@@ -15,165 +15,124 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='senml.proto',
-  package='senml_proto',
+  package='senml_protobuf',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n\x0bsenml.proto\x12\x0bsenml_proto\"\xfc\x02\n\x06Record\x12\x10\n\x08\x62\x61seName\x18\x01 \x01(\t\x12\x10\n\x08\x62\x61seTime\x18\x02 \x01(\x01\x12\x10\n\x08\x62\x61seUnit\x18\x03 \x01(\t\x12\x13\n\x0b\x62\x61seVersion\x18\x04 \x01(\x05\x12\x11\n\tbaseValue\x18\x05 \x01(\x01\x12\x0f\n\x07\x62\x61seSum\x18\x06 \x01(\x01\x12\x0c\n\x04name\x18\x07 \x01(\t\x12\x0c\n\x04unit\x18\x08 \x01(\t\x12\x0c\n\x04time\x18\t \x01(\x01\x12\x12\n\nupdateTime\x18\x10 \x01(\x01\x12\r\n\x05value\x18\n \x01(\x01\x12\x13\n\x0bstringValue\x18\x0b \x01(\t\x12\x11\n\tdataValue\x18\x0c \x01(\t\x12\x11\n\tboolValue\x18\r \x01(\x08\x12\x0b\n\x03sum\x18\x0e \x01(\x01\x12+\n\x04type\x18\x0f \x01(\x0e\x32\x1d.senml_proto.Record.ValueType\"A\n\tValueType\x12\t\n\x05\x46LOAT\x10\x00\x12\n\n\x06STRING\x10\x01\x12\n\n\x06\x42INARY\x10\x02\x12\x08\n\x04\x42OOL\x10\x03\x12\x07\n\x03SUM\x10\x04\x62\x06proto3'
+  serialized_pb=b'\n\x0bsenml.proto\x12\x0esenml_protobuf\"\xdf\x02\n\x06Record\x12\x10\n\x08\x62\x61seName\x18\x01 \x01(\t\x12\x10\n\x08\x62\x61seTime\x18\x02 \x01(\x01\x12\x10\n\x08\x62\x61seUnit\x18\x03 \x01(\t\x12\x13\n\x0b\x62\x61seVersion\x18\x04 \x01(\x05\x12\x13\n\tbaseValue\x18\x05 \x01(\x01H\x00\x12\x11\n\x07\x62\x61seSum\x18\x06 \x01(\x01H\x01\x12\x0c\n\x04name\x18\x07 \x01(\t\x12\x0c\n\x04unit\x18\x08 \x01(\t\x12\x0c\n\x04time\x18\t \x01(\x01\x12\x12\n\nupdateTime\x18\n \x01(\x01\x12\x0f\n\x05value\x18\x0b \x01(\x01H\x02\x12\x15\n\x0bstringValue\x18\x0c \x01(\tH\x02\x12\x13\n\tdataValue\x18\r \x01(\tH\x02\x12\x13\n\tboolValue\x18\x0e \x01(\x08H\x02\x12\r\n\x03sum\x18\x0f \x01(\x01H\x03\x42\x13\n\x11\x62\x61seValueOptionalB\x11\n\x0f\x62\x61seSumOptionalB\x0c\n\nvalueOneofB\r\n\x0bsumOptional\"/\n\x07Message\x12$\n\x04pack\x18\x01 \x03(\x0b\x32\x16.senml_protobuf.Recordb\x06proto3'
 )
 
 
-
-_RECORD_VALUETYPE = _descriptor.EnumDescriptor(
-  name='ValueType',
-  full_name='senml_proto.Record.ValueType',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='FLOAT', index=0, number=0,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='STRING', index=1, number=1,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='BINARY', index=2, number=2,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='BOOL', index=3, number=3,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='SUM', index=4, number=4,
-      serialized_options=None,
-      type=None),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=344,
-  serialized_end=409,
-)
-_sym_db.RegisterEnumDescriptor(_RECORD_VALUETYPE)
 
 
 _RECORD = _descriptor.Descriptor(
   name='Record',
-  full_name='senml_proto.Record',
+  full_name='senml_protobuf.Record',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='baseName', full_name='senml_proto.Record.baseName', index=0,
+      name='baseName', full_name='senml_protobuf.Record.baseName', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='baseTime', full_name='senml_proto.Record.baseTime', index=1,
+      name='baseTime', full_name='senml_protobuf.Record.baseTime', index=1,
       number=2, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='baseUnit', full_name='senml_proto.Record.baseUnit', index=2,
+      name='baseUnit', full_name='senml_protobuf.Record.baseUnit', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='baseVersion', full_name='senml_proto.Record.baseVersion', index=3,
+      name='baseVersion', full_name='senml_protobuf.Record.baseVersion', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='baseValue', full_name='senml_proto.Record.baseValue', index=4,
+      name='baseValue', full_name='senml_protobuf.Record.baseValue', index=4,
       number=5, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='baseSum', full_name='senml_proto.Record.baseSum', index=5,
+      name='baseSum', full_name='senml_protobuf.Record.baseSum', index=5,
       number=6, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='name', full_name='senml_proto.Record.name', index=6,
+      name='name', full_name='senml_protobuf.Record.name', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='unit', full_name='senml_proto.Record.unit', index=7,
+      name='unit', full_name='senml_protobuf.Record.unit', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='time', full_name='senml_proto.Record.time', index=8,
+      name='time', full_name='senml_protobuf.Record.time', index=8,
       number=9, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='updateTime', full_name='senml_proto.Record.updateTime', index=9,
-      number=16, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='senml_proto.Record.value', index=10,
+      name='updateTime', full_name='senml_protobuf.Record.updateTime', index=9,
       number=10, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='stringValue', full_name='senml_proto.Record.stringValue', index=11,
-      number=11, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='value', full_name='senml_protobuf.Record.value', index=10,
+      number=11, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='dataValue', full_name='senml_proto.Record.dataValue', index=12,
+      name='stringValue', full_name='senml_protobuf.Record.stringValue', index=11,
       number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='boolValue', full_name='senml_proto.Record.boolValue', index=13,
-      number=13, type=8, cpp_type=7, label=1,
+      name='dataValue', full_name='senml_protobuf.Record.dataValue', index=12,
+      number=13, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='boolValue', full_name='senml_protobuf.Record.boolValue', index=13,
+      number=14, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sum', full_name='senml_proto.Record.sum', index=14,
-      number=14, type=1, cpp_type=5, label=1,
+      name='sum', full_name='senml_protobuf.Record.sum', index=14,
+      number=15, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='senml_proto.Record.type', index=15,
-      number=15, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -182,7 +141,49 @@ _RECORD = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
-    _RECORD_VALUETYPE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='baseValueOptional', full_name='senml_protobuf.Record.baseValueOptional',
+      index=0, containing_type=None, fields=[]),
+    _descriptor.OneofDescriptor(
+      name='baseSumOptional', full_name='senml_protobuf.Record.baseSumOptional',
+      index=1, containing_type=None, fields=[]),
+    _descriptor.OneofDescriptor(
+      name='valueOneof', full_name='senml_protobuf.Record.valueOneof',
+      index=2, containing_type=None, fields=[]),
+    _descriptor.OneofDescriptor(
+      name='sumOptional', full_name='senml_protobuf.Record.sumOptional',
+      index=3, containing_type=None, fields=[]),
+  ],
+  serialized_start=32,
+  serialized_end=383,
+)
+
+
+_MESSAGE = _descriptor.Descriptor(
+  name='Message',
+  full_name='senml_protobuf.Message',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='pack', full_name='senml_protobuf.Message.pack', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
   ],
   serialized_options=None,
   is_extendable=False,
@@ -190,21 +191,49 @@ _RECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29,
-  serialized_end=409,
+  serialized_start=385,
+  serialized_end=432,
 )
 
-_RECORD.fields_by_name['type'].enum_type = _RECORD_VALUETYPE
-_RECORD_VALUETYPE.containing_type = _RECORD
+_RECORD.oneofs_by_name['baseValueOptional'].fields.append(
+  _RECORD.fields_by_name['baseValue'])
+_RECORD.fields_by_name['baseValue'].containing_oneof = _RECORD.oneofs_by_name['baseValueOptional']
+_RECORD.oneofs_by_name['baseSumOptional'].fields.append(
+  _RECORD.fields_by_name['baseSum'])
+_RECORD.fields_by_name['baseSum'].containing_oneof = _RECORD.oneofs_by_name['baseSumOptional']
+_RECORD.oneofs_by_name['valueOneof'].fields.append(
+  _RECORD.fields_by_name['value'])
+_RECORD.fields_by_name['value'].containing_oneof = _RECORD.oneofs_by_name['valueOneof']
+_RECORD.oneofs_by_name['valueOneof'].fields.append(
+  _RECORD.fields_by_name['stringValue'])
+_RECORD.fields_by_name['stringValue'].containing_oneof = _RECORD.oneofs_by_name['valueOneof']
+_RECORD.oneofs_by_name['valueOneof'].fields.append(
+  _RECORD.fields_by_name['dataValue'])
+_RECORD.fields_by_name['dataValue'].containing_oneof = _RECORD.oneofs_by_name['valueOneof']
+_RECORD.oneofs_by_name['valueOneof'].fields.append(
+  _RECORD.fields_by_name['boolValue'])
+_RECORD.fields_by_name['boolValue'].containing_oneof = _RECORD.oneofs_by_name['valueOneof']
+_RECORD.oneofs_by_name['sumOptional'].fields.append(
+  _RECORD.fields_by_name['sum'])
+_RECORD.fields_by_name['sum'].containing_oneof = _RECORD.oneofs_by_name['sumOptional']
+_MESSAGE.fields_by_name['pack'].message_type = _RECORD
 DESCRIPTOR.message_types_by_name['Record'] = _RECORD
+DESCRIPTOR.message_types_by_name['Message'] = _MESSAGE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Record = _reflection.GeneratedProtocolMessageType('Record', (_message.Message,), {
   'DESCRIPTOR' : _RECORD,
   '__module__' : 'senml_pb2'
-  # @@protoc_insertion_point(class_scope:senml_proto.Record)
+  # @@protoc_insertion_point(class_scope:senml_protobuf.Record)
   })
 _sym_db.RegisterMessage(Record)
+
+Message = _reflection.GeneratedProtocolMessageType('Message', (_message.Message,), {
+  'DESCRIPTOR' : _MESSAGE,
+  '__module__' : 'senml_pb2'
+  # @@protoc_insertion_point(class_scope:senml_protobuf.Message)
+  })
+_sym_db.RegisterMessage(Message)
 
 
 # @@protoc_insertion_point(module_scope)

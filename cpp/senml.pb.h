@@ -31,7 +31,6 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -48,55 +47,31 @@ struct TableStruct_senml_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[1]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
   static const ::PROTOBUF_NAMESPACE_ID::uint32 offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_senml_2eproto;
-namespace senml_proto {
+namespace senml_protobuf {
+class Message;
+class MessageDefaultTypeInternal;
+extern MessageDefaultTypeInternal _Message_default_instance_;
 class Record;
 class RecordDefaultTypeInternal;
 extern RecordDefaultTypeInternal _Record_default_instance_;
-}  // namespace senml_proto
+}  // namespace senml_protobuf
 PROTOBUF_NAMESPACE_OPEN
-template<> ::senml_proto::Record* Arena::CreateMaybeMessage<::senml_proto::Record>(Arena*);
+template<> ::senml_protobuf::Message* Arena::CreateMaybeMessage<::senml_protobuf::Message>(Arena*);
+template<> ::senml_protobuf::Record* Arena::CreateMaybeMessage<::senml_protobuf::Record>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
-namespace senml_proto {
+namespace senml_protobuf {
 
-enum Record_ValueType : int {
-  Record_ValueType_FLOAT = 0,
-  Record_ValueType_STRING = 1,
-  Record_ValueType_BINARY = 2,
-  Record_ValueType_BOOL = 3,
-  Record_ValueType_SUM = 4,
-  Record_ValueType_Record_ValueType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  Record_ValueType_Record_ValueType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
-};
-bool Record_ValueType_IsValid(int value);
-constexpr Record_ValueType Record_ValueType_ValueType_MIN = Record_ValueType_FLOAT;
-constexpr Record_ValueType Record_ValueType_ValueType_MAX = Record_ValueType_SUM;
-constexpr int Record_ValueType_ValueType_ARRAYSIZE = Record_ValueType_ValueType_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Record_ValueType_descriptor();
-template<typename T>
-inline const std::string& Record_ValueType_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, Record_ValueType>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function Record_ValueType_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    Record_ValueType_descriptor(), enum_t_value);
-}
-inline bool Record_ValueType_Parse(
-    const std::string& name, Record_ValueType* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Record_ValueType>(
-    Record_ValueType_descriptor(), name, value);
-}
 // ===================================================================
 
 class Record :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:senml_proto.Record) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:senml_protobuf.Record) */ {
  public:
   Record();
   virtual ~Record();
@@ -130,6 +105,29 @@ class Record :
     return GetMetadataStatic().reflection;
   }
   static const Record& default_instance();
+
+  enum BaseValueOptionalCase {
+    kBaseValue = 5,
+    BASEVALUEOPTIONAL_NOT_SET = 0,
+  };
+
+  enum BaseSumOptionalCase {
+    kBaseSum = 6,
+    BASESUMOPTIONAL_NOT_SET = 0,
+  };
+
+  enum ValueOneofCase {
+    kValue = 11,
+    kStringValue = 12,
+    kDataValue = 13,
+    kBoolValue = 14,
+    VALUEONEOF_NOT_SET = 0,
+  };
+
+  enum SumOptionalCase {
+    kSum = 15,
+    SUMOPTIONAL_NOT_SET = 0,
+  };
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
   static inline const Record* internal_default_instance() {
@@ -176,7 +174,7 @@ class Record :
   void InternalSwap(Record* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "senml_proto.Record";
+    return "senml_protobuf.Record";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -198,42 +196,6 @@ class Record :
 
   // nested types ----------------------------------------------------
 
-  typedef Record_ValueType ValueType;
-  static constexpr ValueType FLOAT =
-    Record_ValueType_FLOAT;
-  static constexpr ValueType STRING =
-    Record_ValueType_STRING;
-  static constexpr ValueType BINARY =
-    Record_ValueType_BINARY;
-  static constexpr ValueType BOOL =
-    Record_ValueType_BOOL;
-  static constexpr ValueType SUM =
-    Record_ValueType_SUM;
-  static inline bool ValueType_IsValid(int value) {
-    return Record_ValueType_IsValid(value);
-  }
-  static constexpr ValueType ValueType_MIN =
-    Record_ValueType_ValueType_MIN;
-  static constexpr ValueType ValueType_MAX =
-    Record_ValueType_ValueType_MAX;
-  static constexpr int ValueType_ARRAYSIZE =
-    Record_ValueType_ValueType_ARRAYSIZE;
-  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
-  ValueType_descriptor() {
-    return Record_ValueType_descriptor();
-  }
-  template<typename T>
-  static inline const std::string& ValueType_Name(T enum_t_value) {
-    static_assert(::std::is_same<T, ValueType>::value ||
-      ::std::is_integral<T>::value,
-      "Incorrect type passed to function ValueType_Name.");
-    return Record_ValueType_Name(enum_t_value);
-  }
-  static inline bool ValueType_Parse(const std::string& name,
-      ValueType* value) {
-    return Record_ValueType_Parse(name, value);
-  }
-
   // accessors -------------------------------------------------------
 
   enum : int {
@@ -241,18 +203,17 @@ class Record :
     kBaseUnitFieldNumber = 3,
     kNameFieldNumber = 7,
     kUnitFieldNumber = 8,
-    kStringValueFieldNumber = 11,
-    kDataValueFieldNumber = 12,
     kBaseTimeFieldNumber = 2,
+    kTimeFieldNumber = 9,
+    kBaseVersionFieldNumber = 4,
+    kUpdateTimeFieldNumber = 10,
     kBaseValueFieldNumber = 5,
     kBaseSumFieldNumber = 6,
-    kBaseVersionFieldNumber = 4,
-    kBoolValueFieldNumber = 13,
-    kTimeFieldNumber = 9,
-    kValueFieldNumber = 10,
-    kSumFieldNumber = 14,
-    kUpdateTimeFieldNumber = 16,
-    kTypeFieldNumber = 15,
+    kValueFieldNumber = 11,
+    kStringValueFieldNumber = 12,
+    kDataValueFieldNumber = 13,
+    kBoolValueFieldNumber = 14,
+    kSumFieldNumber = 15,
   };
   // string baseName = 1;
   void clear_basename();
@@ -318,7 +279,82 @@ class Record :
   std::string* _internal_mutable_unit();
   public:
 
-  // string stringValue = 11;
+  // double baseTime = 2;
+  void clear_basetime();
+  double basetime() const;
+  void set_basetime(double value);
+  private:
+  double _internal_basetime() const;
+  void _internal_set_basetime(double value);
+  public:
+
+  // double time = 9;
+  void clear_time();
+  double time() const;
+  void set_time(double value);
+  private:
+  double _internal_time() const;
+  void _internal_set_time(double value);
+  public:
+
+  // int32 baseVersion = 4;
+  void clear_baseversion();
+  ::PROTOBUF_NAMESPACE_ID::int32 baseversion() const;
+  void set_baseversion(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_baseversion() const;
+  void _internal_set_baseversion(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // double updateTime = 10;
+  void clear_updatetime();
+  double updatetime() const;
+  void set_updatetime(double value);
+  private:
+  double _internal_updatetime() const;
+  void _internal_set_updatetime(double value);
+  public:
+
+  // double baseValue = 5;
+  private:
+  bool _internal_has_basevalue() const;
+  public:
+  void clear_basevalue();
+  double basevalue() const;
+  void set_basevalue(double value);
+  private:
+  double _internal_basevalue() const;
+  void _internal_set_basevalue(double value);
+  public:
+
+  // double baseSum = 6;
+  private:
+  bool _internal_has_basesum() const;
+  public:
+  void clear_basesum();
+  double basesum() const;
+  void set_basesum(double value);
+  private:
+  double _internal_basesum() const;
+  void _internal_set_basesum(double value);
+  public:
+
+  // double value = 11;
+  private:
+  bool _internal_has_value() const;
+  public:
+  void clear_value();
+  double value() const;
+  void set_value(double value);
+  private:
+  double _internal_value() const;
+  void _internal_set_value(double value);
+  public:
+
+  // string stringValue = 12;
+  private:
+  bool _internal_has_stringvalue() const;
+  public:
   void clear_stringvalue();
   const std::string& stringvalue() const;
   void set_stringvalue(const std::string& value);
@@ -334,7 +370,10 @@ class Record :
   std::string* _internal_mutable_stringvalue();
   public:
 
-  // string dataValue = 12;
+  // string dataValue = 13;
+  private:
+  bool _internal_has_datavalue() const;
+  public:
   void clear_datavalue();
   const std::string& datavalue() const;
   void set_datavalue(const std::string& value);
@@ -350,43 +389,10 @@ class Record :
   std::string* _internal_mutable_datavalue();
   public:
 
-  // double baseTime = 2;
-  void clear_basetime();
-  double basetime() const;
-  void set_basetime(double value);
+  // bool boolValue = 14;
   private:
-  double _internal_basetime() const;
-  void _internal_set_basetime(double value);
+  bool _internal_has_boolvalue() const;
   public:
-
-  // double baseValue = 5;
-  void clear_basevalue();
-  double basevalue() const;
-  void set_basevalue(double value);
-  private:
-  double _internal_basevalue() const;
-  void _internal_set_basevalue(double value);
-  public:
-
-  // double baseSum = 6;
-  void clear_basesum();
-  double basesum() const;
-  void set_basesum(double value);
-  private:
-  double _internal_basesum() const;
-  void _internal_set_basesum(double value);
-  public:
-
-  // int32 baseVersion = 4;
-  void clear_baseversion();
-  ::PROTOBUF_NAMESPACE_ID::int32 baseversion() const;
-  void set_baseversion(::PROTOBUF_NAMESPACE_ID::int32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_baseversion() const;
-  void _internal_set_baseversion(::PROTOBUF_NAMESPACE_ID::int32 value);
-  public:
-
-  // bool boolValue = 13;
   void clear_boolvalue();
   bool boolvalue() const;
   void set_boolvalue(bool value);
@@ -395,25 +401,10 @@ class Record :
   void _internal_set_boolvalue(bool value);
   public:
 
-  // double time = 9;
-  void clear_time();
-  double time() const;
-  void set_time(double value);
+  // double sum = 15;
   private:
-  double _internal_time() const;
-  void _internal_set_time(double value);
+  bool _internal_has_sum() const;
   public:
-
-  // double value = 10;
-  void clear_value();
-  double value() const;
-  void set_value(double value);
-  private:
-  double _internal_value() const;
-  void _internal_set_value(double value);
-  public:
-
-  // double sum = 14;
   void clear_sum();
   double sum() const;
   void set_sum(double value);
@@ -422,45 +413,204 @@ class Record :
   void _internal_set_sum(double value);
   public:
 
-  // double updateTime = 16;
-  void clear_updatetime();
-  double updatetime() const;
-  void set_updatetime(double value);
-  private:
-  double _internal_updatetime() const;
-  void _internal_set_updatetime(double value);
-  public:
-
-  // .senml_proto.Record.ValueType type = 15;
-  void clear_type();
-  ::senml_proto::Record_ValueType type() const;
-  void set_type(::senml_proto::Record_ValueType value);
-  private:
-  ::senml_proto::Record_ValueType _internal_type() const;
-  void _internal_set_type(::senml_proto::Record_ValueType value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:senml_proto.Record)
+  void clear_baseValueOptional();
+  BaseValueOptionalCase baseValueOptional_case() const;
+  void clear_baseSumOptional();
+  BaseSumOptionalCase baseSumOptional_case() const;
+  void clear_valueOneof();
+  ValueOneofCase valueOneof_case() const;
+  void clear_sumOptional();
+  SumOptionalCase sumOptional_case() const;
+  // @@protoc_insertion_point(class_scope:senml_protobuf.Record)
  private:
   class _Internal;
+  void set_has_basevalue();
+  void set_has_basesum();
+  void set_has_value();
+  void set_has_stringvalue();
+  void set_has_datavalue();
+  void set_has_boolvalue();
+  void set_has_sum();
+
+  inline bool has_baseValueOptional() const;
+  inline void clear_has_baseValueOptional();
+
+  inline bool has_baseSumOptional() const;
+  inline void clear_has_baseSumOptional();
+
+  inline bool has_valueOneof() const;
+  inline void clear_has_valueOneof();
+
+  inline bool has_sumOptional() const;
+  inline void clear_has_sumOptional();
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr basename_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr baseunit_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr unit_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr stringvalue_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr datavalue_;
   double basetime_;
-  double basevalue_;
-  double basesum_;
-  ::PROTOBUF_NAMESPACE_ID::int32 baseversion_;
-  bool boolvalue_;
   double time_;
-  double value_;
-  double sum_;
+  ::PROTOBUF_NAMESPACE_ID::int32 baseversion_;
   double updatetime_;
-  int type_;
+  union BaseValueOptionalUnion {
+    BaseValueOptionalUnion() {}
+    double basevalue_;
+  } baseValueOptional_;
+  union BaseSumOptionalUnion {
+    BaseSumOptionalUnion() {}
+    double basesum_;
+  } baseSumOptional_;
+  union ValueOneofUnion {
+    ValueOneofUnion() {}
+    double value_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr stringvalue_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr datavalue_;
+    bool boolvalue_;
+  } valueOneof_;
+  union SumOptionalUnion {
+    SumOptionalUnion() {}
+    double sum_;
+  } sumOptional_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[4];
+
+  friend struct ::TableStruct_senml_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Message :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:senml_protobuf.Message) */ {
+ public:
+  Message();
+  virtual ~Message();
+
+  Message(const Message& from);
+  Message(Message&& from) noexcept
+    : Message() {
+    *this = ::std::move(from);
+  }
+
+  inline Message& operator=(const Message& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Message& operator=(Message&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const Message& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Message* internal_default_instance() {
+    return reinterpret_cast<const Message*>(
+               &_Message_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(Message& a, Message& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Message* other) {
+    if (other == this) return;
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Message* New() const final {
+    return CreateMaybeMessage<Message>(nullptr);
+  }
+
+  Message* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Message>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const Message& from);
+  void MergeFrom(const Message& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Message* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "senml_protobuf.Message";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_senml_2eproto);
+    return ::descriptor_table_senml_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPackFieldNumber = 1,
+  };
+  // repeated .senml_protobuf.Record pack = 1;
+  int pack_size() const;
+  private:
+  int _internal_pack_size() const;
+  public:
+  void clear_pack();
+  ::senml_protobuf::Record* mutable_pack(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::senml_protobuf::Record >*
+      mutable_pack();
+  private:
+  const ::senml_protobuf::Record& _internal_pack(int index) const;
+  ::senml_protobuf::Record* _internal_add_pack();
+  public:
+  const ::senml_protobuf::Record& pack(int index) const;
+  ::senml_protobuf::Record* add_pack();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::senml_protobuf::Record >&
+      pack() const;
+
+  // @@protoc_insertion_point(class_scope:senml_protobuf.Message)
+ private:
+  class _Internal;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::senml_protobuf::Record > pack_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_senml_2eproto;
 };
@@ -480,15 +630,15 @@ inline void Record::clear_basename() {
   basename_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline const std::string& Record::basename() const {
-  // @@protoc_insertion_point(field_get:senml_proto.Record.baseName)
+  // @@protoc_insertion_point(field_get:senml_protobuf.Record.baseName)
   return _internal_basename();
 }
 inline void Record::set_basename(const std::string& value) {
   _internal_set_basename(value);
-  // @@protoc_insertion_point(field_set:senml_proto.Record.baseName)
+  // @@protoc_insertion_point(field_set:senml_protobuf.Record.baseName)
 }
 inline std::string* Record::mutable_basename() {
-  // @@protoc_insertion_point(field_mutable:senml_proto.Record.baseName)
+  // @@protoc_insertion_point(field_mutable:senml_protobuf.Record.baseName)
   return _internal_mutable_basename();
 }
 inline const std::string& Record::_internal_basename() const {
@@ -502,26 +652,26 @@ inline void Record::set_basename(std::string&& value) {
   
   basename_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:senml_proto.Record.baseName)
+  // @@protoc_insertion_point(field_set_rvalue:senml_protobuf.Record.baseName)
 }
 inline void Record::set_basename(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   basename_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:senml_proto.Record.baseName)
+  // @@protoc_insertion_point(field_set_char:senml_protobuf.Record.baseName)
 }
 inline void Record::set_basename(const char* value, size_t size) {
   
   basename_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:senml_proto.Record.baseName)
+  // @@protoc_insertion_point(field_set_pointer:senml_protobuf.Record.baseName)
 }
 inline std::string* Record::_internal_mutable_basename() {
   
   return basename_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* Record::release_basename() {
-  // @@protoc_insertion_point(field_release:senml_proto.Record.baseName)
+  // @@protoc_insertion_point(field_release:senml_protobuf.Record.baseName)
   
   return basename_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -532,7 +682,7 @@ inline void Record::set_allocated_basename(std::string* basename) {
     
   }
   basename_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), basename);
-  // @@protoc_insertion_point(field_set_allocated:senml_proto.Record.baseName)
+  // @@protoc_insertion_point(field_set_allocated:senml_protobuf.Record.baseName)
 }
 
 // double baseTime = 2;
@@ -543,7 +693,7 @@ inline double Record::_internal_basetime() const {
   return basetime_;
 }
 inline double Record::basetime() const {
-  // @@protoc_insertion_point(field_get:senml_proto.Record.baseTime)
+  // @@protoc_insertion_point(field_get:senml_protobuf.Record.baseTime)
   return _internal_basetime();
 }
 inline void Record::_internal_set_basetime(double value) {
@@ -552,7 +702,7 @@ inline void Record::_internal_set_basetime(double value) {
 }
 inline void Record::set_basetime(double value) {
   _internal_set_basetime(value);
-  // @@protoc_insertion_point(field_set:senml_proto.Record.baseTime)
+  // @@protoc_insertion_point(field_set:senml_protobuf.Record.baseTime)
 }
 
 // string baseUnit = 3;
@@ -560,15 +710,15 @@ inline void Record::clear_baseunit() {
   baseunit_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline const std::string& Record::baseunit() const {
-  // @@protoc_insertion_point(field_get:senml_proto.Record.baseUnit)
+  // @@protoc_insertion_point(field_get:senml_protobuf.Record.baseUnit)
   return _internal_baseunit();
 }
 inline void Record::set_baseunit(const std::string& value) {
   _internal_set_baseunit(value);
-  // @@protoc_insertion_point(field_set:senml_proto.Record.baseUnit)
+  // @@protoc_insertion_point(field_set:senml_protobuf.Record.baseUnit)
 }
 inline std::string* Record::mutable_baseunit() {
-  // @@protoc_insertion_point(field_mutable:senml_proto.Record.baseUnit)
+  // @@protoc_insertion_point(field_mutable:senml_protobuf.Record.baseUnit)
   return _internal_mutable_baseunit();
 }
 inline const std::string& Record::_internal_baseunit() const {
@@ -582,26 +732,26 @@ inline void Record::set_baseunit(std::string&& value) {
   
   baseunit_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:senml_proto.Record.baseUnit)
+  // @@protoc_insertion_point(field_set_rvalue:senml_protobuf.Record.baseUnit)
 }
 inline void Record::set_baseunit(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   baseunit_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:senml_proto.Record.baseUnit)
+  // @@protoc_insertion_point(field_set_char:senml_protobuf.Record.baseUnit)
 }
 inline void Record::set_baseunit(const char* value, size_t size) {
   
   baseunit_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:senml_proto.Record.baseUnit)
+  // @@protoc_insertion_point(field_set_pointer:senml_protobuf.Record.baseUnit)
 }
 inline std::string* Record::_internal_mutable_baseunit() {
   
   return baseunit_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* Record::release_baseunit() {
-  // @@protoc_insertion_point(field_release:senml_proto.Record.baseUnit)
+  // @@protoc_insertion_point(field_release:senml_protobuf.Record.baseUnit)
   
   return baseunit_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -612,7 +762,7 @@ inline void Record::set_allocated_baseunit(std::string* baseunit) {
     
   }
   baseunit_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), baseunit);
-  // @@protoc_insertion_point(field_set_allocated:senml_proto.Record.baseUnit)
+  // @@protoc_insertion_point(field_set_allocated:senml_protobuf.Record.baseUnit)
 }
 
 // int32 baseVersion = 4;
@@ -623,7 +773,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int32 Record::_internal_baseversion() const {
   return baseversion_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 Record::baseversion() const {
-  // @@protoc_insertion_point(field_get:senml_proto.Record.baseVersion)
+  // @@protoc_insertion_point(field_get:senml_protobuf.Record.baseVersion)
   return _internal_baseversion();
 }
 inline void Record::_internal_set_baseversion(::PROTOBUF_NAMESPACE_ID::int32 value) {
@@ -632,47 +782,77 @@ inline void Record::_internal_set_baseversion(::PROTOBUF_NAMESPACE_ID::int32 val
 }
 inline void Record::set_baseversion(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_baseversion(value);
-  // @@protoc_insertion_point(field_set:senml_proto.Record.baseVersion)
+  // @@protoc_insertion_point(field_set:senml_protobuf.Record.baseVersion)
 }
 
 // double baseValue = 5;
+inline bool Record::_internal_has_basevalue() const {
+  return baseValueOptional_case() == kBaseValue;
+}
+inline void Record::set_has_basevalue() {
+  _oneof_case_[0] = kBaseValue;
+}
 inline void Record::clear_basevalue() {
-  basevalue_ = 0;
+  if (_internal_has_basevalue()) {
+    baseValueOptional_.basevalue_ = 0;
+    clear_has_baseValueOptional();
+  }
 }
 inline double Record::_internal_basevalue() const {
-  return basevalue_;
-}
-inline double Record::basevalue() const {
-  // @@protoc_insertion_point(field_get:senml_proto.Record.baseValue)
-  return _internal_basevalue();
+  if (_internal_has_basevalue()) {
+    return baseValueOptional_.basevalue_;
+  }
+  return 0;
 }
 inline void Record::_internal_set_basevalue(double value) {
-  
-  basevalue_ = value;
+  if (!_internal_has_basevalue()) {
+    clear_baseValueOptional();
+    set_has_basevalue();
+  }
+  baseValueOptional_.basevalue_ = value;
+}
+inline double Record::basevalue() const {
+  // @@protoc_insertion_point(field_get:senml_protobuf.Record.baseValue)
+  return _internal_basevalue();
 }
 inline void Record::set_basevalue(double value) {
   _internal_set_basevalue(value);
-  // @@protoc_insertion_point(field_set:senml_proto.Record.baseValue)
+  // @@protoc_insertion_point(field_set:senml_protobuf.Record.baseValue)
 }
 
 // double baseSum = 6;
+inline bool Record::_internal_has_basesum() const {
+  return baseSumOptional_case() == kBaseSum;
+}
+inline void Record::set_has_basesum() {
+  _oneof_case_[1] = kBaseSum;
+}
 inline void Record::clear_basesum() {
-  basesum_ = 0;
+  if (_internal_has_basesum()) {
+    baseSumOptional_.basesum_ = 0;
+    clear_has_baseSumOptional();
+  }
 }
 inline double Record::_internal_basesum() const {
-  return basesum_;
-}
-inline double Record::basesum() const {
-  // @@protoc_insertion_point(field_get:senml_proto.Record.baseSum)
-  return _internal_basesum();
+  if (_internal_has_basesum()) {
+    return baseSumOptional_.basesum_;
+  }
+  return 0;
 }
 inline void Record::_internal_set_basesum(double value) {
-  
-  basesum_ = value;
+  if (!_internal_has_basesum()) {
+    clear_baseSumOptional();
+    set_has_basesum();
+  }
+  baseSumOptional_.basesum_ = value;
+}
+inline double Record::basesum() const {
+  // @@protoc_insertion_point(field_get:senml_protobuf.Record.baseSum)
+  return _internal_basesum();
 }
 inline void Record::set_basesum(double value) {
   _internal_set_basesum(value);
-  // @@protoc_insertion_point(field_set:senml_proto.Record.baseSum)
+  // @@protoc_insertion_point(field_set:senml_protobuf.Record.baseSum)
 }
 
 // string name = 7;
@@ -680,15 +860,15 @@ inline void Record::clear_name() {
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline const std::string& Record::name() const {
-  // @@protoc_insertion_point(field_get:senml_proto.Record.name)
+  // @@protoc_insertion_point(field_get:senml_protobuf.Record.name)
   return _internal_name();
 }
 inline void Record::set_name(const std::string& value) {
   _internal_set_name(value);
-  // @@protoc_insertion_point(field_set:senml_proto.Record.name)
+  // @@protoc_insertion_point(field_set:senml_protobuf.Record.name)
 }
 inline std::string* Record::mutable_name() {
-  // @@protoc_insertion_point(field_mutable:senml_proto.Record.name)
+  // @@protoc_insertion_point(field_mutable:senml_protobuf.Record.name)
   return _internal_mutable_name();
 }
 inline const std::string& Record::_internal_name() const {
@@ -702,26 +882,26 @@ inline void Record::set_name(std::string&& value) {
   
   name_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:senml_proto.Record.name)
+  // @@protoc_insertion_point(field_set_rvalue:senml_protobuf.Record.name)
 }
 inline void Record::set_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:senml_proto.Record.name)
+  // @@protoc_insertion_point(field_set_char:senml_protobuf.Record.name)
 }
 inline void Record::set_name(const char* value, size_t size) {
   
   name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:senml_proto.Record.name)
+  // @@protoc_insertion_point(field_set_pointer:senml_protobuf.Record.name)
 }
 inline std::string* Record::_internal_mutable_name() {
   
   return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* Record::release_name() {
-  // @@protoc_insertion_point(field_release:senml_proto.Record.name)
+  // @@protoc_insertion_point(field_release:senml_protobuf.Record.name)
   
   return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -732,7 +912,7 @@ inline void Record::set_allocated_name(std::string* name) {
     
   }
   name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:senml_proto.Record.name)
+  // @@protoc_insertion_point(field_set_allocated:senml_protobuf.Record.name)
 }
 
 // string unit = 8;
@@ -740,15 +920,15 @@ inline void Record::clear_unit() {
   unit_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline const std::string& Record::unit() const {
-  // @@protoc_insertion_point(field_get:senml_proto.Record.unit)
+  // @@protoc_insertion_point(field_get:senml_protobuf.Record.unit)
   return _internal_unit();
 }
 inline void Record::set_unit(const std::string& value) {
   _internal_set_unit(value);
-  // @@protoc_insertion_point(field_set:senml_proto.Record.unit)
+  // @@protoc_insertion_point(field_set:senml_protobuf.Record.unit)
 }
 inline std::string* Record::mutable_unit() {
-  // @@protoc_insertion_point(field_mutable:senml_proto.Record.unit)
+  // @@protoc_insertion_point(field_mutable:senml_protobuf.Record.unit)
   return _internal_mutable_unit();
 }
 inline const std::string& Record::_internal_unit() const {
@@ -762,26 +942,26 @@ inline void Record::set_unit(std::string&& value) {
   
   unit_.SetNoArena(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:senml_proto.Record.unit)
+  // @@protoc_insertion_point(field_set_rvalue:senml_protobuf.Record.unit)
 }
 inline void Record::set_unit(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   unit_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:senml_proto.Record.unit)
+  // @@protoc_insertion_point(field_set_char:senml_protobuf.Record.unit)
 }
 inline void Record::set_unit(const char* value, size_t size) {
   
   unit_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:senml_proto.Record.unit)
+  // @@protoc_insertion_point(field_set_pointer:senml_protobuf.Record.unit)
 }
 inline std::string* Record::_internal_mutable_unit() {
   
   return unit_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* Record::release_unit() {
-  // @@protoc_insertion_point(field_release:senml_proto.Record.unit)
+  // @@protoc_insertion_point(field_release:senml_protobuf.Record.unit)
   
   return unit_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -792,7 +972,7 @@ inline void Record::set_allocated_unit(std::string* unit) {
     
   }
   unit_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), unit);
-  // @@protoc_insertion_point(field_set_allocated:senml_proto.Record.unit)
+  // @@protoc_insertion_point(field_set_allocated:senml_protobuf.Record.unit)
 }
 
 // double time = 9;
@@ -803,7 +983,7 @@ inline double Record::_internal_time() const {
   return time_;
 }
 inline double Record::time() const {
-  // @@protoc_insertion_point(field_get:senml_proto.Record.time)
+  // @@protoc_insertion_point(field_get:senml_protobuf.Record.time)
   return _internal_time();
 }
 inline void Record::_internal_set_time(double value) {
@@ -812,10 +992,10 @@ inline void Record::_internal_set_time(double value) {
 }
 inline void Record::set_time(double value) {
   _internal_set_time(value);
-  // @@protoc_insertion_point(field_set:senml_proto.Record.time)
+  // @@protoc_insertion_point(field_set:senml_protobuf.Record.time)
 }
 
-// double updateTime = 16;
+// double updateTime = 10;
 inline void Record::clear_updatetime() {
   updatetime_ = 0;
 }
@@ -823,7 +1003,7 @@ inline double Record::_internal_updatetime() const {
   return updatetime_;
 }
 inline double Record::updatetime() const {
-  // @@protoc_insertion_point(field_get:senml_proto.Record.updateTime)
+  // @@protoc_insertion_point(field_get:senml_protobuf.Record.updateTime)
   return _internal_updatetime();
 }
 inline void Record::_internal_set_updatetime(double value) {
@@ -832,226 +1012,398 @@ inline void Record::_internal_set_updatetime(double value) {
 }
 inline void Record::set_updatetime(double value) {
   _internal_set_updatetime(value);
-  // @@protoc_insertion_point(field_set:senml_proto.Record.updateTime)
+  // @@protoc_insertion_point(field_set:senml_protobuf.Record.updateTime)
 }
 
-// double value = 10;
+// double value = 11;
+inline bool Record::_internal_has_value() const {
+  return valueOneof_case() == kValue;
+}
+inline void Record::set_has_value() {
+  _oneof_case_[2] = kValue;
+}
 inline void Record::clear_value() {
-  value_ = 0;
+  if (_internal_has_value()) {
+    valueOneof_.value_ = 0;
+    clear_has_valueOneof();
+  }
 }
 inline double Record::_internal_value() const {
-  return value_;
-}
-inline double Record::value() const {
-  // @@protoc_insertion_point(field_get:senml_proto.Record.value)
-  return _internal_value();
+  if (_internal_has_value()) {
+    return valueOneof_.value_;
+  }
+  return 0;
 }
 inline void Record::_internal_set_value(double value) {
-  
-  value_ = value;
+  if (!_internal_has_value()) {
+    clear_valueOneof();
+    set_has_value();
+  }
+  valueOneof_.value_ = value;
+}
+inline double Record::value() const {
+  // @@protoc_insertion_point(field_get:senml_protobuf.Record.value)
+  return _internal_value();
 }
 inline void Record::set_value(double value) {
   _internal_set_value(value);
-  // @@protoc_insertion_point(field_set:senml_proto.Record.value)
+  // @@protoc_insertion_point(field_set:senml_protobuf.Record.value)
 }
 
-// string stringValue = 11;
+// string stringValue = 12;
+inline bool Record::_internal_has_stringvalue() const {
+  return valueOneof_case() == kStringValue;
+}
+inline void Record::set_has_stringvalue() {
+  _oneof_case_[2] = kStringValue;
+}
 inline void Record::clear_stringvalue() {
-  stringvalue_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (_internal_has_stringvalue()) {
+    valueOneof_.stringvalue_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+    clear_has_valueOneof();
+  }
 }
 inline const std::string& Record::stringvalue() const {
-  // @@protoc_insertion_point(field_get:senml_proto.Record.stringValue)
+  // @@protoc_insertion_point(field_get:senml_protobuf.Record.stringValue)
   return _internal_stringvalue();
 }
 inline void Record::set_stringvalue(const std::string& value) {
   _internal_set_stringvalue(value);
-  // @@protoc_insertion_point(field_set:senml_proto.Record.stringValue)
+  // @@protoc_insertion_point(field_set:senml_protobuf.Record.stringValue)
 }
 inline std::string* Record::mutable_stringvalue() {
-  // @@protoc_insertion_point(field_mutable:senml_proto.Record.stringValue)
+  // @@protoc_insertion_point(field_mutable:senml_protobuf.Record.stringValue)
   return _internal_mutable_stringvalue();
 }
 inline const std::string& Record::_internal_stringvalue() const {
-  return stringvalue_.GetNoArena();
+  if (_internal_has_stringvalue()) {
+    return valueOneof_.stringvalue_.GetNoArena();
+  }
+  return *&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
 }
 inline void Record::_internal_set_stringvalue(const std::string& value) {
-  
-  stringvalue_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  if (!_internal_has_stringvalue()) {
+    clear_valueOneof();
+    set_has_stringvalue();
+    valueOneof_.stringvalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  valueOneof_.stringvalue_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
 inline void Record::set_stringvalue(std::string&& value) {
-  
-  stringvalue_.SetNoArena(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:senml_proto.Record.stringValue)
+  // @@protoc_insertion_point(field_set:senml_protobuf.Record.stringValue)
+  if (!_internal_has_stringvalue()) {
+    clear_valueOneof();
+    set_has_stringvalue();
+    valueOneof_.stringvalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  valueOneof_.stringvalue_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:senml_protobuf.Record.stringValue)
 }
 inline void Record::set_stringvalue(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
-  stringvalue_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:senml_proto.Record.stringValue)
+  if (!_internal_has_stringvalue()) {
+    clear_valueOneof();
+    set_has_stringvalue();
+    valueOneof_.stringvalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  valueOneof_.stringvalue_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:senml_protobuf.Record.stringValue)
 }
 inline void Record::set_stringvalue(const char* value, size_t size) {
-  
-  stringvalue_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:senml_proto.Record.stringValue)
+  if (!_internal_has_stringvalue()) {
+    clear_valueOneof();
+    set_has_stringvalue();
+    valueOneof_.stringvalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  valueOneof_.stringvalue_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:senml_protobuf.Record.stringValue)
 }
 inline std::string* Record::_internal_mutable_stringvalue() {
-  
-  return stringvalue_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!_internal_has_stringvalue()) {
+    clear_valueOneof();
+    set_has_stringvalue();
+    valueOneof_.stringvalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  return valueOneof_.stringvalue_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* Record::release_stringvalue() {
-  // @@protoc_insertion_point(field_release:senml_proto.Record.stringValue)
-  
-  return stringvalue_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_release:senml_protobuf.Record.stringValue)
+  if (_internal_has_stringvalue()) {
+    clear_has_valueOneof();
+    return valueOneof_.stringvalue_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
 }
 inline void Record::set_allocated_stringvalue(std::string* stringvalue) {
-  if (stringvalue != nullptr) {
-    
-  } else {
-    
+  if (has_valueOneof()) {
+    clear_valueOneof();
   }
-  stringvalue_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), stringvalue);
-  // @@protoc_insertion_point(field_set_allocated:senml_proto.Record.stringValue)
+  if (stringvalue != nullptr) {
+    set_has_stringvalue();
+    valueOneof_.stringvalue_.UnsafeSetDefault(stringvalue);
+  }
+  // @@protoc_insertion_point(field_set_allocated:senml_protobuf.Record.stringValue)
 }
 
-// string dataValue = 12;
+// string dataValue = 13;
+inline bool Record::_internal_has_datavalue() const {
+  return valueOneof_case() == kDataValue;
+}
+inline void Record::set_has_datavalue() {
+  _oneof_case_[2] = kDataValue;
+}
 inline void Record::clear_datavalue() {
-  datavalue_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (_internal_has_datavalue()) {
+    valueOneof_.datavalue_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+    clear_has_valueOneof();
+  }
 }
 inline const std::string& Record::datavalue() const {
-  // @@protoc_insertion_point(field_get:senml_proto.Record.dataValue)
+  // @@protoc_insertion_point(field_get:senml_protobuf.Record.dataValue)
   return _internal_datavalue();
 }
 inline void Record::set_datavalue(const std::string& value) {
   _internal_set_datavalue(value);
-  // @@protoc_insertion_point(field_set:senml_proto.Record.dataValue)
+  // @@protoc_insertion_point(field_set:senml_protobuf.Record.dataValue)
 }
 inline std::string* Record::mutable_datavalue() {
-  // @@protoc_insertion_point(field_mutable:senml_proto.Record.dataValue)
+  // @@protoc_insertion_point(field_mutable:senml_protobuf.Record.dataValue)
   return _internal_mutable_datavalue();
 }
 inline const std::string& Record::_internal_datavalue() const {
-  return datavalue_.GetNoArena();
+  if (_internal_has_datavalue()) {
+    return valueOneof_.datavalue_.GetNoArena();
+  }
+  return *&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
 }
 inline void Record::_internal_set_datavalue(const std::string& value) {
-  
-  datavalue_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  if (!_internal_has_datavalue()) {
+    clear_valueOneof();
+    set_has_datavalue();
+    valueOneof_.datavalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  valueOneof_.datavalue_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
 }
 inline void Record::set_datavalue(std::string&& value) {
-  
-  datavalue_.SetNoArena(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:senml_proto.Record.dataValue)
+  // @@protoc_insertion_point(field_set:senml_protobuf.Record.dataValue)
+  if (!_internal_has_datavalue()) {
+    clear_valueOneof();
+    set_has_datavalue();
+    valueOneof_.datavalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  valueOneof_.datavalue_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:senml_protobuf.Record.dataValue)
 }
 inline void Record::set_datavalue(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
-  datavalue_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:senml_proto.Record.dataValue)
+  if (!_internal_has_datavalue()) {
+    clear_valueOneof();
+    set_has_datavalue();
+    valueOneof_.datavalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  valueOneof_.datavalue_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:senml_protobuf.Record.dataValue)
 }
 inline void Record::set_datavalue(const char* value, size_t size) {
-  
-  datavalue_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:senml_proto.Record.dataValue)
+  if (!_internal_has_datavalue()) {
+    clear_valueOneof();
+    set_has_datavalue();
+    valueOneof_.datavalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  valueOneof_.datavalue_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:senml_protobuf.Record.dataValue)
 }
 inline std::string* Record::_internal_mutable_datavalue() {
-  
-  return datavalue_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!_internal_has_datavalue()) {
+    clear_valueOneof();
+    set_has_datavalue();
+    valueOneof_.datavalue_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  return valueOneof_.datavalue_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 inline std::string* Record::release_datavalue() {
-  // @@protoc_insertion_point(field_release:senml_proto.Record.dataValue)
-  
-  return datavalue_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_release:senml_protobuf.Record.dataValue)
+  if (_internal_has_datavalue()) {
+    clear_has_valueOneof();
+    return valueOneof_.datavalue_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  } else {
+    return nullptr;
+  }
 }
 inline void Record::set_allocated_datavalue(std::string* datavalue) {
-  if (datavalue != nullptr) {
-    
-  } else {
-    
+  if (has_valueOneof()) {
+    clear_valueOneof();
   }
-  datavalue_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), datavalue);
-  // @@protoc_insertion_point(field_set_allocated:senml_proto.Record.dataValue)
+  if (datavalue != nullptr) {
+    set_has_datavalue();
+    valueOneof_.datavalue_.UnsafeSetDefault(datavalue);
+  }
+  // @@protoc_insertion_point(field_set_allocated:senml_protobuf.Record.dataValue)
 }
 
-// bool boolValue = 13;
+// bool boolValue = 14;
+inline bool Record::_internal_has_boolvalue() const {
+  return valueOneof_case() == kBoolValue;
+}
+inline void Record::set_has_boolvalue() {
+  _oneof_case_[2] = kBoolValue;
+}
 inline void Record::clear_boolvalue() {
-  boolvalue_ = false;
+  if (_internal_has_boolvalue()) {
+    valueOneof_.boolvalue_ = false;
+    clear_has_valueOneof();
+  }
 }
 inline bool Record::_internal_boolvalue() const {
-  return boolvalue_;
-}
-inline bool Record::boolvalue() const {
-  // @@protoc_insertion_point(field_get:senml_proto.Record.boolValue)
-  return _internal_boolvalue();
+  if (_internal_has_boolvalue()) {
+    return valueOneof_.boolvalue_;
+  }
+  return false;
 }
 inline void Record::_internal_set_boolvalue(bool value) {
-  
-  boolvalue_ = value;
+  if (!_internal_has_boolvalue()) {
+    clear_valueOneof();
+    set_has_boolvalue();
+  }
+  valueOneof_.boolvalue_ = value;
+}
+inline bool Record::boolvalue() const {
+  // @@protoc_insertion_point(field_get:senml_protobuf.Record.boolValue)
+  return _internal_boolvalue();
 }
 inline void Record::set_boolvalue(bool value) {
   _internal_set_boolvalue(value);
-  // @@protoc_insertion_point(field_set:senml_proto.Record.boolValue)
+  // @@protoc_insertion_point(field_set:senml_protobuf.Record.boolValue)
 }
 
-// double sum = 14;
+// double sum = 15;
+inline bool Record::_internal_has_sum() const {
+  return sumOptional_case() == kSum;
+}
+inline void Record::set_has_sum() {
+  _oneof_case_[3] = kSum;
+}
 inline void Record::clear_sum() {
-  sum_ = 0;
+  if (_internal_has_sum()) {
+    sumOptional_.sum_ = 0;
+    clear_has_sumOptional();
+  }
 }
 inline double Record::_internal_sum() const {
-  return sum_;
-}
-inline double Record::sum() const {
-  // @@protoc_insertion_point(field_get:senml_proto.Record.sum)
-  return _internal_sum();
+  if (_internal_has_sum()) {
+    return sumOptional_.sum_;
+  }
+  return 0;
 }
 inline void Record::_internal_set_sum(double value) {
-  
-  sum_ = value;
+  if (!_internal_has_sum()) {
+    clear_sumOptional();
+    set_has_sum();
+  }
+  sumOptional_.sum_ = value;
+}
+inline double Record::sum() const {
+  // @@protoc_insertion_point(field_get:senml_protobuf.Record.sum)
+  return _internal_sum();
 }
 inline void Record::set_sum(double value) {
   _internal_set_sum(value);
-  // @@protoc_insertion_point(field_set:senml_proto.Record.sum)
+  // @@protoc_insertion_point(field_set:senml_protobuf.Record.sum)
 }
 
-// .senml_proto.Record.ValueType type = 15;
-inline void Record::clear_type() {
-  type_ = 0;
+inline bool Record::has_baseValueOptional() const {
+  return baseValueOptional_case() != BASEVALUEOPTIONAL_NOT_SET;
 }
-inline ::senml_proto::Record_ValueType Record::_internal_type() const {
-  return static_cast< ::senml_proto::Record_ValueType >(type_);
+inline void Record::clear_has_baseValueOptional() {
+  _oneof_case_[0] = BASEVALUEOPTIONAL_NOT_SET;
 }
-inline ::senml_proto::Record_ValueType Record::type() const {
-  // @@protoc_insertion_point(field_get:senml_proto.Record.type)
-  return _internal_type();
+inline bool Record::has_baseSumOptional() const {
+  return baseSumOptional_case() != BASESUMOPTIONAL_NOT_SET;
 }
-inline void Record::_internal_set_type(::senml_proto::Record_ValueType value) {
-  
-  type_ = value;
+inline void Record::clear_has_baseSumOptional() {
+  _oneof_case_[1] = BASESUMOPTIONAL_NOT_SET;
 }
-inline void Record::set_type(::senml_proto::Record_ValueType value) {
-  _internal_set_type(value);
-  // @@protoc_insertion_point(field_set:senml_proto.Record.type)
+inline bool Record::has_valueOneof() const {
+  return valueOneof_case() != VALUEONEOF_NOT_SET;
+}
+inline void Record::clear_has_valueOneof() {
+  _oneof_case_[2] = VALUEONEOF_NOT_SET;
+}
+inline bool Record::has_sumOptional() const {
+  return sumOptional_case() != SUMOPTIONAL_NOT_SET;
+}
+inline void Record::clear_has_sumOptional() {
+  _oneof_case_[3] = SUMOPTIONAL_NOT_SET;
+}
+inline Record::BaseValueOptionalCase Record::baseValueOptional_case() const {
+  return Record::BaseValueOptionalCase(_oneof_case_[0]);
+}
+inline Record::BaseSumOptionalCase Record::baseSumOptional_case() const {
+  return Record::BaseSumOptionalCase(_oneof_case_[1]);
+}
+inline Record::ValueOneofCase Record::valueOneof_case() const {
+  return Record::ValueOneofCase(_oneof_case_[2]);
+}
+inline Record::SumOptionalCase Record::sumOptional_case() const {
+  return Record::SumOptionalCase(_oneof_case_[3]);
+}
+// -------------------------------------------------------------------
+
+// Message
+
+// repeated .senml_protobuf.Record pack = 1;
+inline int Message::_internal_pack_size() const {
+  return pack_.size();
+}
+inline int Message::pack_size() const {
+  return _internal_pack_size();
+}
+inline void Message::clear_pack() {
+  pack_.Clear();
+}
+inline ::senml_protobuf::Record* Message::mutable_pack(int index) {
+  // @@protoc_insertion_point(field_mutable:senml_protobuf.Message.pack)
+  return pack_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::senml_protobuf::Record >*
+Message::mutable_pack() {
+  // @@protoc_insertion_point(field_mutable_list:senml_protobuf.Message.pack)
+  return &pack_;
+}
+inline const ::senml_protobuf::Record& Message::_internal_pack(int index) const {
+  return pack_.Get(index);
+}
+inline const ::senml_protobuf::Record& Message::pack(int index) const {
+  // @@protoc_insertion_point(field_get:senml_protobuf.Message.pack)
+  return _internal_pack(index);
+}
+inline ::senml_protobuf::Record* Message::_internal_add_pack() {
+  return pack_.Add();
+}
+inline ::senml_protobuf::Record* Message::add_pack() {
+  // @@protoc_insertion_point(field_add:senml_protobuf.Message.pack)
+  return _internal_add_pack();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::senml_protobuf::Record >&
+Message::pack() const {
+  // @@protoc_insertion_point(field_list:senml_protobuf.Message.pack)
+  return pack_;
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace senml_proto
-
-PROTOBUF_NAMESPACE_OPEN
-
-template <> struct is_proto_enum< ::senml_proto::Record_ValueType> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::senml_proto::Record_ValueType>() {
-  return ::senml_proto::Record_ValueType_descriptor();
-}
-
-PROTOBUF_NAMESPACE_CLOSE
+}  // namespace senml_protobuf
 
 // @@protoc_insertion_point(global_scope)
 

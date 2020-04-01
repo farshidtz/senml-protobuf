@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace SenmlProto {
+namespace SenmlProtobuf {
 
   /// <summary>Holder for reflection information generated from senml.proto</summary>
   public static partial class SenmlReflection {
@@ -24,20 +24,21 @@ namespace SenmlProto {
     static SenmlReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CgtzZW5tbC5wcm90bxILc2VubWxfcHJvdG8i/AIKBlJlY29yZBIQCghiYXNl",
-            "TmFtZRgBIAEoCRIQCghiYXNlVGltZRgCIAEoARIQCghiYXNlVW5pdBgDIAEo",
-            "CRITCgtiYXNlVmVyc2lvbhgEIAEoBRIRCgliYXNlVmFsdWUYBSABKAESDwoH",
-            "YmFzZVN1bRgGIAEoARIMCgRuYW1lGAcgASgJEgwKBHVuaXQYCCABKAkSDAoE",
-            "dGltZRgJIAEoARISCgp1cGRhdGVUaW1lGBAgASgBEg0KBXZhbHVlGAogASgB",
-            "EhMKC3N0cmluZ1ZhbHVlGAsgASgJEhEKCWRhdGFWYWx1ZRgMIAEoCRIRCgli",
-            "b29sVmFsdWUYDSABKAgSCwoDc3VtGA4gASgBEisKBHR5cGUYDyABKA4yHS5z",
-            "ZW5tbF9wcm90by5SZWNvcmQuVmFsdWVUeXBlIkEKCVZhbHVlVHlwZRIJCgVG",
-            "TE9BVBAAEgoKBlNUUklORxABEgoKBkJJTkFSWRACEggKBEJPT0wQAxIHCgNT",
-            "VU0QBGIGcHJvdG8z"));
+            "CgtzZW5tbC5wcm90bxIOc2VubWxfcHJvdG9idWYi3wIKBlJlY29yZBIQCghi",
+            "YXNlTmFtZRgBIAEoCRIQCghiYXNlVGltZRgCIAEoARIQCghiYXNlVW5pdBgD",
+            "IAEoCRITCgtiYXNlVmVyc2lvbhgEIAEoBRITCgliYXNlVmFsdWUYBSABKAFI",
+            "ABIRCgdiYXNlU3VtGAYgASgBSAESDAoEbmFtZRgHIAEoCRIMCgR1bml0GAgg",
+            "ASgJEgwKBHRpbWUYCSABKAESEgoKdXBkYXRlVGltZRgKIAEoARIPCgV2YWx1",
+            "ZRgLIAEoAUgCEhUKC3N0cmluZ1ZhbHVlGAwgASgJSAISEwoJZGF0YVZhbHVl",
+            "GA0gASgJSAISEwoJYm9vbFZhbHVlGA4gASgISAISDQoDc3VtGA8gASgBSANC",
+            "EwoRYmFzZVZhbHVlT3B0aW9uYWxCEQoPYmFzZVN1bU9wdGlvbmFsQgwKCnZh",
+            "bHVlT25lb2ZCDQoLc3VtT3B0aW9uYWwiLwoHTWVzc2FnZRIkCgRwYWNrGAEg",
+            "AygLMhYuc2VubWxfcHJvdG9idWYuUmVjb3JkYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::SenmlProto.Record), global::SenmlProto.Record.Parser, new[]{ "BaseName", "BaseTime", "BaseUnit", "BaseVersion", "BaseValue", "BaseSum", "Name", "Unit", "Time", "UpdateTime", "Value", "StringValue", "DataValue", "BoolValue", "Sum", "Type" }, null, new[]{ typeof(global::SenmlProto.Record.Types.ValueType) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::SenmlProtobuf.Record), global::SenmlProtobuf.Record.Parser, new[]{ "BaseName", "BaseTime", "BaseUnit", "BaseVersion", "BaseValue", "BaseSum", "Name", "Unit", "Time", "UpdateTime", "Value", "StringValue", "DataValue", "BoolValue", "Sum" }, new[]{ "BaseValueOptional", "BaseSumOptional", "ValueOneof", "SumOptional" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::SenmlProtobuf.Message), global::SenmlProtobuf.Message.Parser, new[]{ "Pack" }, null, null, null, null)
           }));
     }
     #endregion
@@ -52,7 +53,7 @@ namespace SenmlProto {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::SenmlProto.SenmlReflection.Descriptor.MessageTypes[0]; }
+      get { return global::SenmlProtobuf.SenmlReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -73,18 +74,43 @@ namespace SenmlProto {
       baseTime_ = other.baseTime_;
       baseUnit_ = other.baseUnit_;
       baseVersion_ = other.baseVersion_;
-      baseValue_ = other.baseValue_;
-      baseSum_ = other.baseSum_;
       name_ = other.name_;
       unit_ = other.unit_;
       time_ = other.time_;
       updateTime_ = other.updateTime_;
-      value_ = other.value_;
-      stringValue_ = other.stringValue_;
-      dataValue_ = other.dataValue_;
-      boolValue_ = other.boolValue_;
-      sum_ = other.sum_;
-      type_ = other.type_;
+      switch (other.BaseValueOptionalCase) {
+        case BaseValueOptionalOneofCase.BaseValue:
+          BaseValue = other.BaseValue;
+          break;
+      }
+
+      switch (other.BaseSumOptionalCase) {
+        case BaseSumOptionalOneofCase.BaseSum:
+          BaseSum = other.BaseSum;
+          break;
+      }
+
+      switch (other.ValueOneofCase) {
+        case ValueOneofOneofCase.Value:
+          Value = other.Value;
+          break;
+        case ValueOneofOneofCase.StringValue:
+          StringValue = other.StringValue;
+          break;
+        case ValueOneofOneofCase.DataValue:
+          DataValue = other.DataValue;
+          break;
+        case ValueOneofOneofCase.BoolValue:
+          BoolValue = other.BoolValue;
+          break;
+      }
+
+      switch (other.SumOptionalCase) {
+        case SumOptionalOneofCase.Sum:
+          Sum = other.Sum;
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -142,23 +168,23 @@ namespace SenmlProto {
 
     /// <summary>Field number for the "baseValue" field.</summary>
     public const int BaseValueFieldNumber = 5;
-    private double baseValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double BaseValue {
-      get { return baseValue_; }
+      get { return baseValueOptionalCase_ == BaseValueOptionalOneofCase.BaseValue ? (double) baseValueOptional_ : 0D; }
       set {
-        baseValue_ = value;
+        baseValueOptional_ = value;
+        baseValueOptionalCase_ = BaseValueOptionalOneofCase.BaseValue;
       }
     }
 
     /// <summary>Field number for the "baseSum" field.</summary>
     public const int BaseSumFieldNumber = 6;
-    private double baseSum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double BaseSum {
-      get { return baseSum_; }
+      get { return baseSumOptionalCase_ == BaseSumOptionalOneofCase.BaseSum ? (double) baseSumOptional_ : 0D; }
       set {
-        baseSum_ = value;
+        baseSumOptional_ = value;
+        baseSumOptionalCase_ = BaseSumOptionalOneofCase.BaseSum;
       }
     }
 
@@ -199,11 +225,8 @@ namespace SenmlProto {
     }
 
     /// <summary>Field number for the "updateTime" field.</summary>
-    public const int UpdateTimeFieldNumber = 16;
+    public const int UpdateTimeFieldNumber = 10;
     private double updateTime_;
-    /// <summary>
-    /// rarely used
-    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double UpdateTime {
       get { return updateTime_; }
@@ -213,75 +236,133 @@ namespace SenmlProto {
     }
 
     /// <summary>Field number for the "value" field.</summary>
-    public const int ValueFieldNumber = 10;
-    private double value_;
-    /// <summary>
-    /// value fields
-    /// </summary>
+    public const int ValueFieldNumber = 11;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Value {
-      get { return value_; }
+      get { return valueOneofCase_ == ValueOneofOneofCase.Value ? (double) valueOneof_ : 0D; }
       set {
-        value_ = value;
+        valueOneof_ = value;
+        valueOneofCase_ = ValueOneofOneofCase.Value;
       }
     }
 
     /// <summary>Field number for the "stringValue" field.</summary>
-    public const int StringValueFieldNumber = 11;
-    private string stringValue_ = "";
+    public const int StringValueFieldNumber = 12;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string StringValue {
-      get { return stringValue_; }
+      get { return valueOneofCase_ == ValueOneofOneofCase.StringValue ? (string) valueOneof_ : ""; }
       set {
-        stringValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        valueOneof_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        valueOneofCase_ = ValueOneofOneofCase.StringValue;
       }
     }
 
     /// <summary>Field number for the "dataValue" field.</summary>
-    public const int DataValueFieldNumber = 12;
-    private string dataValue_ = "";
+    public const int DataValueFieldNumber = 13;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string DataValue {
-      get { return dataValue_; }
+      get { return valueOneofCase_ == ValueOneofOneofCase.DataValue ? (string) valueOneof_ : ""; }
       set {
-        dataValue_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        valueOneof_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        valueOneofCase_ = ValueOneofOneofCase.DataValue;
       }
     }
 
     /// <summary>Field number for the "boolValue" field.</summary>
-    public const int BoolValueFieldNumber = 13;
-    private bool boolValue_;
+    public const int BoolValueFieldNumber = 14;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool BoolValue {
-      get { return boolValue_; }
+      get { return valueOneofCase_ == ValueOneofOneofCase.BoolValue ? (bool) valueOneof_ : false; }
       set {
-        boolValue_ = value;
+        valueOneof_ = value;
+        valueOneofCase_ = ValueOneofOneofCase.BoolValue;
       }
     }
 
     /// <summary>Field number for the "sum" field.</summary>
-    public const int SumFieldNumber = 14;
-    private double sum_;
+    public const int SumFieldNumber = 15;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Sum {
-      get { return sum_; }
+      get { return sumOptionalCase_ == SumOptionalOneofCase.Sum ? (double) sumOptional_ : 0D; }
       set {
-        sum_ = value;
+        sumOptional_ = value;
+        sumOptionalCase_ = SumOptionalOneofCase.Sum;
       }
     }
 
-    /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 15;
-    private global::SenmlProto.Record.Types.ValueType type_ = global::SenmlProto.Record.Types.ValueType.Float;
-    /// <summary>
-    /// value type indicator
-    /// </summary>
+    private object baseValueOptional_;
+    /// <summary>Enum of possible cases for the "baseValueOptional" oneof.</summary>
+    public enum BaseValueOptionalOneofCase {
+      None = 0,
+      BaseValue = 5,
+    }
+    private BaseValueOptionalOneofCase baseValueOptionalCase_ = BaseValueOptionalOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::SenmlProto.Record.Types.ValueType Type {
-      get { return type_; }
-      set {
-        type_ = value;
-      }
+    public BaseValueOptionalOneofCase BaseValueOptionalCase {
+      get { return baseValueOptionalCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearBaseValueOptional() {
+      baseValueOptionalCase_ = BaseValueOptionalOneofCase.None;
+      baseValueOptional_ = null;
+    }
+
+    private object baseSumOptional_;
+    /// <summary>Enum of possible cases for the "baseSumOptional" oneof.</summary>
+    public enum BaseSumOptionalOneofCase {
+      None = 0,
+      BaseSum = 6,
+    }
+    private BaseSumOptionalOneofCase baseSumOptionalCase_ = BaseSumOptionalOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BaseSumOptionalOneofCase BaseSumOptionalCase {
+      get { return baseSumOptionalCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearBaseSumOptional() {
+      baseSumOptionalCase_ = BaseSumOptionalOneofCase.None;
+      baseSumOptional_ = null;
+    }
+
+    private object valueOneof_;
+    /// <summary>Enum of possible cases for the "valueOneof" oneof.</summary>
+    public enum ValueOneofOneofCase {
+      None = 0,
+      Value = 11,
+      StringValue = 12,
+      DataValue = 13,
+      BoolValue = 14,
+    }
+    private ValueOneofOneofCase valueOneofCase_ = ValueOneofOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ValueOneofOneofCase ValueOneofCase {
+      get { return valueOneofCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearValueOneof() {
+      valueOneofCase_ = ValueOneofOneofCase.None;
+      valueOneof_ = null;
+    }
+
+    private object sumOptional_;
+    /// <summary>Enum of possible cases for the "sumOptional" oneof.</summary>
+    public enum SumOptionalOneofCase {
+      None = 0,
+      Sum = 15,
+    }
+    private SumOptionalOneofCase sumOptionalCase_ = SumOptionalOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SumOptionalOneofCase SumOptionalCase {
+      get { return sumOptionalCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearSumOptional() {
+      sumOptionalCase_ = SumOptionalOneofCase.None;
+      sumOptional_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -312,7 +393,10 @@ namespace SenmlProto {
       if (DataValue != other.DataValue) return false;
       if (BoolValue != other.BoolValue) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Sum, other.Sum)) return false;
-      if (Type != other.Type) return false;
+      if (BaseValueOptionalCase != other.BaseValueOptionalCase) return false;
+      if (BaseSumOptionalCase != other.BaseSumOptionalCase) return false;
+      if (ValueOneofCase != other.ValueOneofCase) return false;
+      if (SumOptionalCase != other.SumOptionalCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -323,18 +407,21 @@ namespace SenmlProto {
       if (BaseTime != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(BaseTime);
       if (BaseUnit.Length != 0) hash ^= BaseUnit.GetHashCode();
       if (BaseVersion != 0) hash ^= BaseVersion.GetHashCode();
-      if (BaseValue != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(BaseValue);
-      if (BaseSum != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(BaseSum);
+      if (baseValueOptionalCase_ == BaseValueOptionalOneofCase.BaseValue) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(BaseValue);
+      if (baseSumOptionalCase_ == BaseSumOptionalOneofCase.BaseSum) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(BaseSum);
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Unit.Length != 0) hash ^= Unit.GetHashCode();
       if (Time != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Time);
       if (UpdateTime != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(UpdateTime);
-      if (Value != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Value);
-      if (StringValue.Length != 0) hash ^= StringValue.GetHashCode();
-      if (DataValue.Length != 0) hash ^= DataValue.GetHashCode();
-      if (BoolValue != false) hash ^= BoolValue.GetHashCode();
-      if (Sum != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Sum);
-      if (Type != global::SenmlProto.Record.Types.ValueType.Float) hash ^= Type.GetHashCode();
+      if (valueOneofCase_ == ValueOneofOneofCase.Value) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Value);
+      if (valueOneofCase_ == ValueOneofOneofCase.StringValue) hash ^= StringValue.GetHashCode();
+      if (valueOneofCase_ == ValueOneofOneofCase.DataValue) hash ^= DataValue.GetHashCode();
+      if (valueOneofCase_ == ValueOneofOneofCase.BoolValue) hash ^= BoolValue.GetHashCode();
+      if (sumOptionalCase_ == SumOptionalOneofCase.Sum) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Sum);
+      hash ^= (int) baseValueOptionalCase_;
+      hash ^= (int) baseSumOptionalCase_;
+      hash ^= (int) valueOneofCase_;
+      hash ^= (int) sumOptionalCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -364,11 +451,11 @@ namespace SenmlProto {
         output.WriteRawTag(32);
         output.WriteInt32(BaseVersion);
       }
-      if (BaseValue != 0D) {
+      if (baseValueOptionalCase_ == BaseValueOptionalOneofCase.BaseValue) {
         output.WriteRawTag(41);
         output.WriteDouble(BaseValue);
       }
-      if (BaseSum != 0D) {
+      if (baseSumOptionalCase_ == BaseSumOptionalOneofCase.BaseSum) {
         output.WriteRawTag(49);
         output.WriteDouble(BaseSum);
       }
@@ -384,33 +471,29 @@ namespace SenmlProto {
         output.WriteRawTag(73);
         output.WriteDouble(Time);
       }
-      if (Value != 0D) {
+      if (UpdateTime != 0D) {
         output.WriteRawTag(81);
+        output.WriteDouble(UpdateTime);
+      }
+      if (valueOneofCase_ == ValueOneofOneofCase.Value) {
+        output.WriteRawTag(89);
         output.WriteDouble(Value);
       }
-      if (StringValue.Length != 0) {
-        output.WriteRawTag(90);
+      if (valueOneofCase_ == ValueOneofOneofCase.StringValue) {
+        output.WriteRawTag(98);
         output.WriteString(StringValue);
       }
-      if (DataValue.Length != 0) {
-        output.WriteRawTag(98);
+      if (valueOneofCase_ == ValueOneofOneofCase.DataValue) {
+        output.WriteRawTag(106);
         output.WriteString(DataValue);
       }
-      if (BoolValue != false) {
-        output.WriteRawTag(104);
+      if (valueOneofCase_ == ValueOneofOneofCase.BoolValue) {
+        output.WriteRawTag(112);
         output.WriteBool(BoolValue);
       }
-      if (Sum != 0D) {
-        output.WriteRawTag(113);
+      if (sumOptionalCase_ == SumOptionalOneofCase.Sum) {
+        output.WriteRawTag(121);
         output.WriteDouble(Sum);
-      }
-      if (Type != global::SenmlProto.Record.Types.ValueType.Float) {
-        output.WriteRawTag(120);
-        output.WriteEnum((int) Type);
-      }
-      if (UpdateTime != 0D) {
-        output.WriteRawTag(129, 1);
-        output.WriteDouble(UpdateTime);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -432,10 +515,10 @@ namespace SenmlProto {
       if (BaseVersion != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(BaseVersion);
       }
-      if (BaseValue != 0D) {
+      if (baseValueOptionalCase_ == BaseValueOptionalOneofCase.BaseValue) {
         size += 1 + 8;
       }
-      if (BaseSum != 0D) {
+      if (baseSumOptionalCase_ == BaseSumOptionalOneofCase.BaseSum) {
         size += 1 + 8;
       }
       if (Name.Length != 0) {
@@ -448,25 +531,22 @@ namespace SenmlProto {
         size += 1 + 8;
       }
       if (UpdateTime != 0D) {
-        size += 2 + 8;
-      }
-      if (Value != 0D) {
         size += 1 + 8;
       }
-      if (StringValue.Length != 0) {
+      if (valueOneofCase_ == ValueOneofOneofCase.Value) {
+        size += 1 + 8;
+      }
+      if (valueOneofCase_ == ValueOneofOneofCase.StringValue) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(StringValue);
       }
-      if (DataValue.Length != 0) {
+      if (valueOneofCase_ == ValueOneofOneofCase.DataValue) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(DataValue);
       }
-      if (BoolValue != false) {
+      if (valueOneofCase_ == ValueOneofOneofCase.BoolValue) {
         size += 1 + 1;
       }
-      if (Sum != 0D) {
+      if (sumOptionalCase_ == SumOptionalOneofCase.Sum) {
         size += 1 + 8;
-      }
-      if (Type != global::SenmlProto.Record.Types.ValueType.Float) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -491,12 +571,6 @@ namespace SenmlProto {
       if (other.BaseVersion != 0) {
         BaseVersion = other.BaseVersion;
       }
-      if (other.BaseValue != 0D) {
-        BaseValue = other.BaseValue;
-      }
-      if (other.BaseSum != 0D) {
-        BaseSum = other.BaseSum;
-      }
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
@@ -509,24 +583,39 @@ namespace SenmlProto {
       if (other.UpdateTime != 0D) {
         UpdateTime = other.UpdateTime;
       }
-      if (other.Value != 0D) {
-        Value = other.Value;
+      switch (other.BaseValueOptionalCase) {
+        case BaseValueOptionalOneofCase.BaseValue:
+          BaseValue = other.BaseValue;
+          break;
       }
-      if (other.StringValue.Length != 0) {
-        StringValue = other.StringValue;
+
+      switch (other.BaseSumOptionalCase) {
+        case BaseSumOptionalOneofCase.BaseSum:
+          BaseSum = other.BaseSum;
+          break;
       }
-      if (other.DataValue.Length != 0) {
-        DataValue = other.DataValue;
+
+      switch (other.ValueOneofCase) {
+        case ValueOneofOneofCase.Value:
+          Value = other.Value;
+          break;
+        case ValueOneofOneofCase.StringValue:
+          StringValue = other.StringValue;
+          break;
+        case ValueOneofOneofCase.DataValue:
+          DataValue = other.DataValue;
+          break;
+        case ValueOneofOneofCase.BoolValue:
+          BoolValue = other.BoolValue;
+          break;
       }
-      if (other.BoolValue != false) {
-        BoolValue = other.BoolValue;
+
+      switch (other.SumOptionalCase) {
+        case SumOptionalOneofCase.Sum:
+          Sum = other.Sum;
+          break;
       }
-      if (other.Sum != 0D) {
-        Sum = other.Sum;
-      }
-      if (other.Type != global::SenmlProto.Record.Types.ValueType.Float) {
-        Type = other.Type;
-      }
+
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -575,51 +664,156 @@ namespace SenmlProto {
             break;
           }
           case 81: {
+            UpdateTime = input.ReadDouble();
+            break;
+          }
+          case 89: {
             Value = input.ReadDouble();
             break;
           }
-          case 90: {
+          case 98: {
             StringValue = input.ReadString();
             break;
           }
-          case 98: {
+          case 106: {
             DataValue = input.ReadString();
             break;
           }
-          case 104: {
+          case 112: {
             BoolValue = input.ReadBool();
             break;
           }
-          case 113: {
+          case 121: {
             Sum = input.ReadDouble();
-            break;
-          }
-          case 120: {
-            Type = (global::SenmlProto.Record.Types.ValueType) input.ReadEnum();
-            break;
-          }
-          case 129: {
-            UpdateTime = input.ReadDouble();
             break;
           }
         }
       }
     }
 
-    #region Nested types
-    /// <summary>Container for nested types declared in the Record message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static partial class Types {
-      public enum ValueType {
-        [pbr::OriginalName("FLOAT")] Float = 0,
-        [pbr::OriginalName("STRING")] String = 1,
-        [pbr::OriginalName("BINARY")] Binary = 2,
-        [pbr::OriginalName("BOOL")] Bool = 3,
-        [pbr::OriginalName("SUM")] Sum = 4,
-      }
+  }
 
+  /// <summary>
+  /// this contains the senml pack (array of records)
+  /// </summary>
+  public sealed partial class Message : pb::IMessage<Message> {
+    private static readonly pb::MessageParser<Message> _parser = new pb::MessageParser<Message>(() => new Message());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Message> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::SenmlProtobuf.SenmlReflection.Descriptor.MessageTypes[1]; }
     }
-    #endregion
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Message() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Message(Message other) : this() {
+      pack_ = other.pack_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Message Clone() {
+      return new Message(this);
+    }
+
+    /// <summary>Field number for the "pack" field.</summary>
+    public const int PackFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::SenmlProtobuf.Record> _repeated_pack_codec
+        = pb::FieldCodec.ForMessage(10, global::SenmlProtobuf.Record.Parser);
+    private readonly pbc::RepeatedField<global::SenmlProtobuf.Record> pack_ = new pbc::RepeatedField<global::SenmlProtobuf.Record>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::SenmlProtobuf.Record> Pack {
+      get { return pack_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Message);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Message other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!pack_.Equals(other.pack_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= pack_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      pack_.WriteTo(output, _repeated_pack_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += pack_.CalculateSize(_repeated_pack_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Message other) {
+      if (other == null) {
+        return;
+      }
+      pack_.Add(other.pack_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            pack_.AddEntriesFrom(input, _repeated_pack_codec);
+            break;
+          }
+        }
+      }
+    }
 
   }
 
