@@ -1,6 +1,8 @@
 syntax = "proto3";
 package senml_protobuf;
 
+option go_package = "github.com/farshidtz/senml-protobuf/go";
+
 message Record {
   // base meta fields
   string baseName = 1;
