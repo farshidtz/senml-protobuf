@@ -3257,7 +3257,9 @@ public final class Senml {
       "\n\tboolValue\030\016 \001(\010H\002\022\r\n\003sum\030\017 \001(\001H\003B\023\n\021ba" +
       "seValueOptionalB\021\n\017baseSumOptionalB\014\n\nva" +
       "lueOneofB\r\n\013sumOptional\"/\n\007Message\022$\n\004pa" +
-      "ck\030\001 \003(\0132\026.senml_protobuf.Recordb\006proto3"
+      "ck\030\001 \003(\0132\026.senml_protobuf.RecordB(Z&gith" +
+      "ub.com/farshidtz/senml-protobuf/gob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

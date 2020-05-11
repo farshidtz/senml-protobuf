@@ -118,7 +118,9 @@ const char descriptor_table_protodef_senml_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "\n\tboolValue\030\016 \001(\010H\002\022\r\n\003sum\030\017 \001(\001H\003B\023\n\021ba"
   "seValueOptionalB\021\n\017baseSumOptionalB\014\n\nva"
   "lueOneofB\r\n\013sumOptional\"/\n\007Message\022$\n\004pa"
-  "ck\030\001 \003(\0132\026.senml_protobuf.Recordb\006proto3"
+  "ck\030\001 \003(\0132\026.senml_protobuf.RecordB(Z&gith"
+  "ub.com/farshidtz/senml-protobuf/gob\006prot"
+  "o3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_senml_2eproto_deps[1] = {
 };
@@ -129,7 +131,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_sen
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_senml_2eproto_once;
 static bool descriptor_table_senml_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_senml_2eproto = {
-  &descriptor_table_senml_2eproto_initialized, descriptor_table_protodef_senml_2eproto, "senml.proto", 440,
+  &descriptor_table_senml_2eproto_initialized, descriptor_table_protodef_senml_2eproto, "senml.proto", 482,
   &descriptor_table_senml_2eproto_once, descriptor_table_senml_2eproto_sccs, descriptor_table_senml_2eproto_deps, 2, 0,
   schemas, file_default_instances, TableStruct_senml_2eproto::offsets,
   file_level_metadata_senml_2eproto, 2, file_level_enum_descriptors_senml_2eproto, file_level_service_descriptors_senml_2eproto,

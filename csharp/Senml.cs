@@ -33,7 +33,8 @@ namespace SenmlProtobuf {
             "GA0gASgJSAISEwoJYm9vbFZhbHVlGA4gASgISAISDQoDc3VtGA8gASgBSANC",
             "EwoRYmFzZVZhbHVlT3B0aW9uYWxCEQoPYmFzZVN1bU9wdGlvbmFsQgwKCnZh",
             "bHVlT25lb2ZCDQoLc3VtT3B0aW9uYWwiLwoHTWVzc2FnZRIkCgRwYWNrGAEg",
-            "AygLMhYuc2VubWxfcHJvdG9idWYuUmVjb3JkYgZwcm90bzM="));
+            "AygLMhYuc2VubWxfcHJvdG9idWYuUmVjb3JkQihaJmdpdGh1Yi5jb20vZmFy",
+            "c2hpZHR6L3Nlbm1sLXByb3RvYnVmL2dvYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
